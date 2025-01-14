@@ -1,0 +1,19 @@
+{
+  "menu": {
+    "enabled": true,
+    "sticky": true,
+    "transparent": false,
+    "visible": true
+  },
+  "footer": {
+    "enabled": true,
+    "sticky": false
+  },
+  "sidebar": {
+    "enabled": true
+  },
+  "languageSwitcher": {
+    "enabled": true,
+    "visibleLanguages": ["ro", "en", "de", "fr", "es"]
+  }
+}
