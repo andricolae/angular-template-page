@@ -1,9 +1,17 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [opened]="isOpen">
+  <mat-sidenav #sidenav mode="side" [opened]="isOpen" class="desktop-sidebar">
     <mat-nav-list>
-      <a mat-list-item routerLink="/home" routerLinkActive="active">Item 1</a>
-      <a mat-list-item routerLink="/about" routerLinkActive="active">Item 2</a>
-      <a mat-list-item routerLink="/contact" routerLinkActive="active">Item 3</a>
+      <a mat-list-item href="#header1" (click)="highlightHeader('header1')">Header 1</a>
+      <a mat-list-item href="#header2" (click)="highlightHeader('header1')">Header 2</a>
+      <a mat-list-item href="#header3" (click)="highlightHeader('header1')">Header 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav #mobileSidenav mode="over" [opened]="isOpen" class="mobile-sidebar">
+    <!-- <button mat-button class="close-btn" (click)="toggleSidebar()">Close</button> -->
+    <mat-nav-list>
+      <a mat-list-item href="#header1" (click)="highlightHeader('header1')">Header 1</a>
+      <a mat-list-item href="#header2" (click)="highlightHeader('header1')">Header 2</a>
+      <a mat-list-item href="#header3" (click)="highlightHeader('header1')">Header 3</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
