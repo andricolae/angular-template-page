@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HighlightService } from '../../../../highlight.service';
 
 @Component({
   selector: 'app-about',
@@ -7,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
+  constructor(private highlightService: HighlightService) {}
 
+  ngOnInit() {
+    this.highlightService.highlightedHeader$.subscribe((headerId) => {
+      if (headerId) {
+        document.querySelectorAll('h1, h2, h3').forEach((el) => el.classList.remove('highlight'));
+        const header = document.getElementById(headerId);
+        if (header) {
+          header.classList.add('highlight');
+        }
+      }
+    });
+  }
 }

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { HighlightService } from '../../../../highlight.service';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-services',
   imports: [],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  templateUrl: './servicess.component.html',
+  styleUrl: './servicess.component.css'
 })
-export class ContactComponent {
+export class ServicesComponent {
   constructor(private highlightService: HighlightService) {}
 
   ngOnInit() {

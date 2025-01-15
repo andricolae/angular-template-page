@@ -1,3 +1,6 @@
-<mat-toolbar color="accent" class="footer">
-  <span>&copy; 2025 Your Company. All rights reserved.</span>
+<mat-toolbar
+  *ngIf="isEnabled"
+  [ngClass]="{ 'sticky-footer': isSticky, 'static-footer': !isSticky }"
+  class="footer"
+>  <span>&copy; 2025. All rights reserved.</span>
 </mat-toolbar>

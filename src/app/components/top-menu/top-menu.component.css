@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  background-color: #c093ff;
+  background-color: #f6ff73;
   color: white;
 }
 
@@ -14,4 +14,15 @@ nav {
 
 .spacer {
   flex: 1;
+}
+
+.sticky-menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.transparent-menu {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 }
