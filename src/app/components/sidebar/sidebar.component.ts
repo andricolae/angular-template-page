@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { HighlightService } from '../../../../highlight.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,7 +13,9 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  isOpen = false; // Sidebar starts closed
+  isOpen = false;
+
+  constructor(private highlightService: HighlightService, private router: Router) {}
 
   toggleSidebar() {
     this.isOpen = !this.isOpen;
@@ -25,11 +28,11 @@ export class SidebarComponent {
       }
     }
   }
-  highlightHeader(id: string) {
-    document.querySelectorAll('h1, h2, h3').forEach(el => el.classList.remove('highlight'));
-    const header = document.getElementById(id);
-    if (header) {
-      header.classList.add('highlight');
-    }
-  }
+
+  highlightHeader(headerId: string) {
+    const currentRoute = this.router.url.split('#')[0];
+    this.highlightService.setHighlightedHeader(headerId);
+    const targetUrl = `${currentRoute}#${headerId}`;
+    this.router.navigate([], { fragment: headerId });
+   }
 }
