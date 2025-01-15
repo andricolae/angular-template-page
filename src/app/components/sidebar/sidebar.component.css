@@ -23,6 +23,7 @@ mat-sidenav.mobile-sidebar {
 mat-sidenav-content {
   margin-bottom: 0;
   transition: margin 0.3s ease;
+  padding: 20px;
 }
 
 @media (max-width: 768px) {

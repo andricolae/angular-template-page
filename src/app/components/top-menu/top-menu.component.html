@@ -1,11 +1,19 @@
-<mat-toolbar color="primary" class="top-menu">
+@if (isVisible) {
+  <mat-toolbar color="primary" class="top-menu" [ngClass]="{'sticky-menu':config.sticky, 'transparent-menu': isTransparent}">
   <mat-toolbar-row>
     <span class="spacer"></span>
     <nav>
-      <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+      <!-- <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
       <a mat-button routerLink="/about" routerLinkActive="active">About Us</a>
       <a mat-button routerLink="/services" routerLinkActive="active">Services</a>
-      <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+      <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a> -->
+      @for (item of config.items; track item) {
+        @if (item.enabled) {
+          <a mat-button [routerLink]="item.route" routerLinkActive="active">{{ item.label }}</a>
+        }
+      }
     </nav>
   </mat-toolbar-row>
 </mat-toolbar>
+}
+

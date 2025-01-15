@@ -15,3 +15,14 @@ nav {
 .spacer {
   flex: 1;
 }
+
+.sticky-menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.transparent-menu {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}

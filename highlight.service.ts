@@ -8,7 +8,7 @@ export class HighlightService {
   private highlightedHeaderSubject = new BehaviorSubject<string | null>(null);
   highlightedHeader$ = this.highlightedHeaderSubject.asObservable();
 
-  setHighlightedHeader(headerId: string) {
+  setHighlightedHeader(headerId: string | null) {
     this.highlightedHeaderSubject.next(headerId);
   }
 }

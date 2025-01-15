@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -9,4 +9,24 @@
   background-color: #f4f4f4;
   z-index: 1000;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  z-index: 1000;
+  font-size: 1rem;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.static-footer {
+  position: relative;
 }
