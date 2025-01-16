@@ -2,5 +2,7 @@
   *ngIf="isEnabled"
   [ngClass]="{ 'sticky-footer': isSticky, 'static-footer': !isSticky }"
   class="footer"
->  <span>&copy; 2025. All rights reserved.</span>
+>
+  <span>&copy; 2025. All rights reserved.</span>
+  <app-language-switcher />
 </mat-toolbar>
