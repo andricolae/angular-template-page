@@ -1,0 +1,25 @@
+ ____
+/_   |
+ |   |
+ |   |
+ |___|
+
+-> top menu content from json?
+
+________
+\_____  \
+ /  ____/
+/       \
+\_______ \
+        \/
+
+-> top menu, footer, sidebar - sticky config files - ok?
+
+________
+\_____  \
+  _\__  <
+ /       \
+/______  /
+       \/
+
+-> language switcher in ce masura dezvoltat?
