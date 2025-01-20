@@ -7,6 +7,7 @@ import { HighlightService } from '../../../../highlight.service';
 import { sidebarConfig } from '../../config/sidebar-config';
 import { HttpClient } from '@angular/common/http';
 import submenuConfig from '../../config/submenu-config.json';
+import { SidebarService } from '../../pages/servicess/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,7 +21,7 @@ export class SidebarComponent {
   config = sidebarConfig;
   subMenuItems: string[] = [];
 
-  constructor(private highlightService: HighlightService, private router: Router, private http:HttpClient) {}
+  constructor(private highlightService: HighlightService, private router: Router, private http: HttpClient, private sidebarService: SidebarService) {}
 
   ngOnInit() {
     this.router.events.subscribe((event) => {
@@ -30,6 +31,10 @@ export class SidebarComponent {
         this.loadSubMenuItems(currentRoute);
       }
     });
+    this.sidebarService.isOpen$.subscribe((isOpen) => {
+      console.log('Sidebar received toggle state:', isOpen);
+      this.isOpen = this.isOpen;
+    })
   }
   toggleSidebar() {
     if (!this.config.enabled) {

@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class LanguageSwitcherComponent {
   config = languageSwitcherConfig;
-  languages: string[] = [];
+  languages: { key: string; value: string; enabled: boolean }[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -26,6 +26,6 @@ export class LanguageSwitcherComponent {
   }
 
   loadLanguages(): void {
-    this.languages = languagesData.languages;
+    this.languages = languagesData.languages.filter((lang) => lang.enabled);
   }
 }

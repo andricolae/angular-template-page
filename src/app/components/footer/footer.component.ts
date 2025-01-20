@@ -7,7 +7,7 @@ import { LanguageSwitcherComponent } from "../language-switcher/language-switche
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  imports: [MatToolbarModule, CommonModule, LanguageSwitcherComponent],
+  imports: [MatToolbarModule, CommonModule],
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
