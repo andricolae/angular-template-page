@@ -4,10 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { HighlightService } from '../../../../highlight.service';
-import { sidebarConfig } from '../../config/sidebar-config';
 import { HttpClient } from '@angular/common/http';
 import submenuConfig from '../../config/submenu-config.json';
 import { SidebarService } from '../../pages/servicess/sidebar.service';
+import sidebarConfig from '../../config/sidebar-config.json';
 
 @Component({
   selector: 'app-sidebar',
@@ -69,7 +69,7 @@ export class SidebarComponent {
 
   formatMenuItem(item: string): string {
     return item
-      .replace(/-/g, ' ') // Replace dashes with spaces
-      .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize first letter of each word
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (char) => char.toUpperCase());
   }
 }

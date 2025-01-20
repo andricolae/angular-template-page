@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { sidebarConfig } from '../../config/sidebar-config';
+import sidebarConfig from '../../config/sidebar-config.json';
 
 @Injectable({
   providedIn: 'root',
