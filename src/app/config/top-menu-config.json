@@ -1,0 +1,11 @@
+{
+  "menuItems": [
+    { "label": "Home", "link": "/home", "enabled": true },
+    { "label": "About Us", "link": "/about", "enabled": true },
+    { "label": "Services", "link": "/services", "enabled": true },
+    { "label": "Contact", "link": "/contact", "enabled": false }
+  ],
+  "sticky": true,
+  "transparent": false,
+  "enabled": true
+}

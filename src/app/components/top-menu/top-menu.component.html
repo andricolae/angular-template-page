@@ -1,4 +1,4 @@
-@if (isVisible) {
+@if (enabled) {
   <mat-toolbar color="primary" class="top-menu" [ngClass]="{'sticky-menu':config.sticky, 'transparent-menu': isTransparent}">
   <mat-toolbar-row>
     <button mat-button class="toggle-btn" (click)="toggleSidebar()">☰</button>
@@ -10,9 +10,9 @@
       <a mat-button routerLink="/about" routerLinkActive="active">About Us</a>
       <a mat-button routerLink="/services" routerLinkActive="active">Services</a>
       <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a> -->
-      @for (item of config.items; track item) {
+      @for (item of menuItems; track menuItems) {
         @if (item.enabled) {
-          <a mat-button [routerLink]="item.route" routerLinkActive="active">{{ item.label }}</a>
+          <a mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label }}</a>
         }
       }
     </nav>

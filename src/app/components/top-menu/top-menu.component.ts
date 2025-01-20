@@ -3,11 +3,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { HighlightService } from '../../../../highlight.service';
-import { topMenuConfig } from '../../config/top-menu-config';
 import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from "../language-switcher/language-switcher.component";
 import { SidebarService } from '../../pages/servicess/sidebar.service';
+import topMenuConfig from '../../config/top-menu-config.json';
 
+interface MenuItem {
+  label: string;
+  link: string;
+  enabled: boolean;
+}
 @Component({
   selector: 'app-top-menu',
   templateUrl: './top-menu.component.html',
@@ -15,6 +20,11 @@ import { SidebarService } from '../../pages/servicess/sidebar.service';
   styleUrls: ['./top-menu.component.css']
 })
 export class TopMenuComponent {
+  menuItems: MenuItem[] = [];
+  sticky = false;
+  transparent = false;
+  enabled = false;
+
   constructor(private router: Router, private highlightService: HighlightService, private sidebarService: SidebarService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -24,11 +34,23 @@ export class TopMenuComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.loadConfig();
+  }
+
+  loadConfig(): void {
+    this.menuItems = topMenuConfig.menuItems.filter((item) => item.enabled); // Load only enabled menu items
+    this.sticky = topMenuConfig.sticky;
+    this.transparent = topMenuConfig.transparent;
+    this.enabled = topMenuConfig.enabled;
+    console.log('Top Menu Config Loaded:', topMenuConfig);
+  }
+
   config = topMenuConfig;
 
-  get isVisible() {
-    return this.config.enabled;
-  }
+  // get isVisible() {
+  //   return this.config.enabled;
+  // }
 
   get isTransparent() {
     return this.config.transparent;
