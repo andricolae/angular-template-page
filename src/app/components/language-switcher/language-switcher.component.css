@@ -1,30 +1,33 @@
 .language-switcher {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  padding: 5px;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  background: none;
-  box-shadow: none;
-  border: none;
+  margin-right: 15px;
 }
 
 select {
-  padding: 10px 15px;
-  border: 2px solid #6200ee;
-  border-radius: 25px;
-  /* background-color: white; */
+  appearance: none;
+  padding: 8px 20px;
   font-size: 14px;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  color: white;
+  background-color: #d1bd06;
+  border: none;
+  border-radius: 20px;
   outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.452);
 }
 
+select:hover,
+select:focus {
+  background-color: #b3a106;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.452);
+}
+
+select::-ms-expand {
+  display: none;
+}
 select:after {
   content: '';
   position: absolute;
@@ -35,33 +38,22 @@ select:after {
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid #6200ee;
+  border-top: 6px solid white;
 }
 
-select:hover {
-  border-color: #3700b3;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.language-switcher select {
+  height: 40px;
+  /* line-height: 40px; */
+  padding-right: 30px;
 }
 
-select:focus {
-  outline: none;
-  border-color: #3700b3;
-  box-shadow: 0 6px 12px rgba(98, 0, 238, 0.3);
-}
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-right: 10px;
+  }
 
-option {
-  font-size: 14px;
-  color: #333;
-  background-color: white;
-  padding: 10px;
-}
-
-.sticky-switcher {
-  position: sticky;
-  bottom: 10px;
-}
-
-.transparent-switcher {
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
+  .language-switcher select {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
 }

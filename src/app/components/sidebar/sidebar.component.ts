@@ -33,7 +33,7 @@ export class SidebarComponent {
     });
     this.sidebarService.isOpen$.subscribe((isOpen) => {
       console.log('Sidebar received toggle state:', isOpen);
-      this.isOpen = this.isOpen;
+      this.isOpen = isOpen;
     })
   }
   toggleSidebar() {

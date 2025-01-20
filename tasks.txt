@@ -1,2 +1,0 @@
--> top menu content from json!
--> css for language switcher selector
