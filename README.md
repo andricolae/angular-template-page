@@ -1,6 +1,6 @@
 # Angular Dynamic UI Project
 
-Deployed at: https://angular-template-page.vercel.app/home
+[Deployed at VERCEL](https://angular-template-page.vercel.app/home)
 
 Welcome to the **Angular Dynamic UI Project**, a modern, responsive web application built with Angular and Angular Material. This project demonstrates how to create a highly customizable and dynamic user interface by leveraging JSON-based configurations and Angular standalone components.
 
