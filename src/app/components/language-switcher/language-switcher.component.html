@@ -1,1 +1,13 @@
-<p>language-switcher works!</p>
+@if (config.enabled) {
+  <div
+  class="language-switcher"
+  [ngClass]="{ 'sticky-switcher': config.sticky, 'transparent-switcher': config.transparent }">
+  <select matNativeControl>
+    @for (language of languages; track language) {
+      <option [value]="language.key">
+        {{ language.value }}
+      </option>
+    }
+  </select>
+  </div>
+}

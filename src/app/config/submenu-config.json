@@ -1,0 +1,6 @@
+{
+  "home": ["images", "testimonials"],
+  "about": ["out-mission", "pictures"],
+  "services": ["list-of-services", "out-prices"],
+  "contact": ["write-us", "where-to-find-us"]
+}

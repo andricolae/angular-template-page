@@ -1,6 +1,9 @@
 @if (isVisible) {
   <mat-toolbar color="primary" class="top-menu" [ngClass]="{'sticky-menu':config.sticky, 'transparent-menu': isTransparent}">
   <mat-toolbar-row>
+    <button mat-button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+    <app-language-switcher />
+
     <span class="spacer"></span>
     <nav>
       <!-- <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
@@ -16,4 +19,3 @@
   </mat-toolbar-row>
 </mat-toolbar>
 }
-

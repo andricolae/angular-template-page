@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { footerConfig } from '../../config/footer-config';
 import { CommonModule } from '@angular/common';
+import { LanguageSwitcherComponent } from "../language-switcher/language-switcher.component";
 
 @Component({
   selector: 'app-footer',

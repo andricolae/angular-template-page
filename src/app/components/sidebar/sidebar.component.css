@@ -3,7 +3,7 @@
 }
 
 mat-sidenav.desktop-sidebar {
-  width: 250px;
+  width: 200px;
   background-color: #f9f9f9;
 }
 
@@ -34,4 +34,31 @@ mat-sidenav-content {
   mat-sidenav.mobile-sidebar {
     display: block;
   }
+}
+
+submenu-button {
+  text-transform: capitalize;
+  padding: 10px 15px;
+  margin: 5px 0;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.submenu-button:hover {
+  background-color: #d6d6d6;
+  cursor: pointer;
+}
+
+.centered-button {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+mat-nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
