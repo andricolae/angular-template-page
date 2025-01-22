@@ -1,6 +1,6 @@
 {
-  "home": ["images", "testimonials", "", "", ""],
-  "about": ["out-mission", "pictures", "", "", "", ""],
-  "services": ["list-of-services", "out-prices", "", ""],
+  "home": ["images", "testimonials", "the-team", "us-in-numbers", "career"],
+  "about": ["out-mission", "pictures", "our-drive", "founders", "trophies", "mentions"],
+  "services": ["list-of-services", "out-prices", "custom-services", "work-we-are-proud-of"],
   "contact": ["write-us", "where-to-find-us", "facebook", "instagram", "linkedin", "youtube", "tiktok", "rednote"]
 }
