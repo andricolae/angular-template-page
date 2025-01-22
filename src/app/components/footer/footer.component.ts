@@ -13,8 +13,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  // config = footerConfig;
-  // config: { enabled: boolean; sticky: boolean } = { enabled: footerConfig.enabled, sticky: footerConfig.sticky };
   config: { enabled: boolean; sticky: boolean } = footerConfig;
 
   get isEnabled() {
@@ -24,22 +22,4 @@ export class FooterComponent {
   get isSticky() {
     return this.config.sticky;
   }
-
-  // constructor(private http: HttpClient) {}
-
-  // ngOnInit(): void {
-  //   this.loadConfig();
-  // }
-
-  // loadConfig(): void {
-  //   this.http.get<{ enabled: boolean; sticky: boolean }>(footerConfig).subscribe(
-  //     (config) => {
-  //       this.config = config;
-  //       console.log('Footer Config Loaded:', this.config);
-  //     },
-  //     (error) => {
-  //       console.error('Failed to load footer configuration:', error);
-  //     }
-  //   );
-  // }
 }

@@ -3,10 +3,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { HighlightService } from '../../../../highlight.service';
+import { HighlightService } from '../../services/highlight.service';
 import { HttpClient } from '@angular/common/http';
 import submenuConfig from '../../config/submenu-config.json';
-import { SidebarService } from '../../pages/servicess/sidebar.service';
+import { SidebarService } from '../../services/sidebar.service';
 import sidebarConfig from '../../config/sidebar-config.json';
 
 @Component({
@@ -27,12 +27,10 @@ export class SidebarComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const currentRoute = event.urlAfterRedirects.split('/')[1] || 'home';
-        console.log('Current Route:', currentRoute);
         this.loadSubMenuItems(currentRoute);
       }
     });
     this.sidebarService.isOpen$.subscribe((isOpen) => {
-      console.log('Sidebar received toggle state:', isOpen);
       this.isOpen = isOpen;
     })
   }
@@ -60,11 +58,8 @@ export class SidebarComponent {
    }
 
    loadSubMenuItems(routeName: string) {
-    console.log(`Loading submenu for route: ${routeName}`);
     const config = submenuConfig as { [key: string]: string[] };
-    console.log('Loaded Config:', config);
     this.subMenuItems = config[routeName]?.map((item) => this.formatMenuItem(item)) || [];
-    console.log('Submenu Items:', this.subMenuItems);
   }
 
   formatMenuItem(item: string): string {

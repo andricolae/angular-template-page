@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import sidebarConfig from '../../config/sidebar-config.json';
+import sidebarConfig from '../config/sidebar-config.json';
 
 @Injectable({
   providedIn: 'root',
@@ -12,13 +12,11 @@ export class SidebarService {
 
   toggleSidebar() {
     if (!this.config.enabled) {
-      console.log('Sidebar is not enabled.');
       return;
     }
 
     const newState = !this.isSidebarOpen.value;
     this.isSidebarOpen.next(newState);
-    console.log('Sidebar state toggled:', newState);
 
     const contentElement = document.querySelector('mat-sidenav-content') as HTMLElement;
     if (contentElement) {

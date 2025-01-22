@@ -4,7 +4,6 @@ import { MatButton } from '@angular/material/button';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import languageSwitcherConfig from '../../config/language-switcher-config.json';
-import languagesData from '../../config/languages.json'; // Import the JSON file
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -26,6 +25,6 @@ export class LanguageSwitcherComponent {
   }
 
   loadLanguages(): void {
-    this.languages = languagesData.languages.filter((lang) => lang.enabled);
+    this.languages = this.config.languages.filter((lang) => lang.enabled);
   }
 }

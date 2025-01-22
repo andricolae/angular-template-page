@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { HighlightService } from '../../../../highlight.service';
+import { HighlightService } from '../../services/highlight.service';
 import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from "../language-switcher/language-switcher.component";
-import { SidebarService } from '../../pages/servicess/sidebar.service';
+import { SidebarService } from '../../services/sidebar.service';
 import topMenuConfig from '../../config/top-menu-config.json';
 
 interface MenuItem {
@@ -29,7 +29,6 @@ export class TopMenuComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.highlightService.setHighlightedHeader(null);
-        console.log('TopMenuComponent: Navigation ended, highlight reset');
       }
     });
   }
@@ -39,25 +38,19 @@ export class TopMenuComponent {
   }
 
   loadConfig(): void {
-    this.menuItems = topMenuConfig.menuItems.filter((item) => item.enabled); // Load only enabled menu items
+    this.menuItems = topMenuConfig.menuItems.filter((item) => item.enabled);
     this.sticky = topMenuConfig.sticky;
     this.transparent = topMenuConfig.transparent;
     this.enabled = topMenuConfig.enabled;
-    console.log('Top Menu Config Loaded:', topMenuConfig);
   }
 
   config = topMenuConfig;
-
-  // get isVisible() {
-  //   return this.config.enabled;
-  // }
 
   get isTransparent() {
     return this.config.transparent;
   }
 
   toggleSidebar() {
-    console.log('Toggle button clicked');
     this.sidebarService.toggleSidebar();
   }
 }

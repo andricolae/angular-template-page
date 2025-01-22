@@ -1,0 +1,4 @@
+-> translate page
+-> more content
+-> sidebar buttons to the left
+-> error handling at json failed to load

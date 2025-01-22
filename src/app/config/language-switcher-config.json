@@ -1,5 +1,12 @@
 {
   "enabled": true,
-  "sticky": true,
-  "transparent": true
+  "sticky": false,
+  "transparent": false,
+  "languages": [
+    { "key": "en", "value": "English", "enabled": true },
+    { "key": "fr", "value": "French", "enabled": true },
+    { "key": "es", "value": "Spanish", "enabled": false },
+    { "key": "de", "value": "German", "enabled": false },
+    { "key": "ro", "value": "Romanian", "enabled": true }
+  ]
 }

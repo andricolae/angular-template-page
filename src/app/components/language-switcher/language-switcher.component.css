@@ -43,7 +43,6 @@ select:after {
 
 .language-switcher select {
   height: 40px;
-  /* line-height: 40px; */
   padding-right: 30px;
 }
 
