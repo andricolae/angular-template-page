@@ -2,19 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
+  text-align: center;
   background-color: #f4f4f4;
   z-index: 1000;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.language-switcher {
-  margin-left: auto;
 }
 
 .sticky-footer {

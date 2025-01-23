@@ -1,10 +1,26 @@
-/* html, body { height: 100%; } */
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
 
 .page-content {
+  min-height: calc(100vh - 128px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 20px;
-  max-width: 800px;
-  margin: auto;
+  box-sizing: border-box;
 }
 
 h1 {
