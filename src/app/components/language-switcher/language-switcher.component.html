@@ -2,7 +2,7 @@
   <div
   class="language-switcher"
   [ngClass]="{ 'sticky-switcher': config.sticky, 'transparent-switcher': config.transparent }">
-  <select matNativeControl #languageSelector (change)="switchLanguage(languageSelector.value)">
+  <select matNativeControl>
     @for (language of languages; track language) {
       <option [value]="language.key">
         {{ language.value }}

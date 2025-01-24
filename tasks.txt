@@ -1,2 +1,14 @@
--> translate page
--> error handling at json failed to load
+ ____
+/_   |
+ |   |
+ |   |
+ |___|
+multi language implementation
+
+________
+\_____  \
+ /  ____/
+/       \
+\_______ \
+        \/
+error handling at failed json load

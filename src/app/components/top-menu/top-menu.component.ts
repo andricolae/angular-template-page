@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from "../language-switcher/language-switcher.component";
 import { SidebarService } from '../../services/sidebar.service';
 import topMenuConfig from '../../config/top-menu-config.json';
-import { TranslateModule } from '@ngx-translate/core';
 
 interface MenuItem {
   label: string;
@@ -17,7 +16,7 @@ interface MenuItem {
 @Component({
   selector: 'app-top-menu',
   templateUrl: './top-menu.component.html',
-  imports: [MatToolbarModule, MatButtonModule, RouterModule, CommonModule, LanguageSwitcherComponent, TranslateModule],
+  imports: [MatToolbarModule, MatButtonModule, RouterModule, CommonModule, LanguageSwitcherComponent],
   styleUrls: ['./top-menu.component.css']
 })
 export class TopMenuComponent {

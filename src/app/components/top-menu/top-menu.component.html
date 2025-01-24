@@ -8,7 +8,7 @@
     <nav>
       @for (item of menuItems; track menuItems) {
         @if (item.enabled) {
-          <a mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label | translate }}</a>
+          <a mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label }}</a>
         }
       }
     </nav>
