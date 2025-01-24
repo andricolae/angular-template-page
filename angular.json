@@ -13,7 +13,7 @@
         "sourceLocale": "en-US",
         "locales": {
           "ro": {
-            "translation": "src/locale/messages.ro.json"
+            "translation": "src/locale/messages.ro.xlf"
           }
         }
       },
@@ -63,6 +63,11 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "ro": {
+              "localize": [
+                "ro"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -75,6 +80,9 @@
             },
             "development": {
               "buildTarget": "angular-template-page:build:development"
+            },
+            "ro": {
+              "buildTarget": "angular-template-page:build:development,ro"
             }
           },
           "defaultConfiguration": "development"

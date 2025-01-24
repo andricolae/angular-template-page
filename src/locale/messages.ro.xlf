@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5736481176444461852" datatype="html">
+        <source>About Us</source>
+        <target>Despre Noi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2123119236158820878" datatype="html">
+        <source> Since our inception, we’ve been on a mission to make a difference in the world through innovation, creativity, and a relentless focus on quality. Our story is one of growth, perseverance, and a dedication to pushing boundaries. </source>
+        <target> De la înființarea noastră, ne-am propus să facem o diferență în lume prin inovație, creativitate și o atenție neobosită asupra calității. Povestea noastră este despre creștere, perseverență și o dedicare de a depăși limitele. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8867701023469982521" datatype="html">
+        <source>Our History</source>
+        <target>Istoria noastră</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4694819425317053002" datatype="html">
+        <source> Founded in 2010, we started as a small team of dreamers who wanted to create impactful solutions. Over the years, our vision expanded, and so did our team. Today, we’re proud to be a global leader, trusted by thousands of clients worldwide. </source>
+        <target> Fondată în 2010, am început ca o echipă mică de visători care își doreau să creeze soluții cu impact. De-a lungul anilor, viziunea noastră s-a extins, la fel și echipa. Astăzi, suntem mândri să fim un lider global, de încredere pentru mii de clienți din întreaga lume. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7741663547669157107" datatype="html">
+        <source>Our Culture</source>
+      <target>Cultura noastră</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3858020653807333310" datatype="html">
+        <source> At the heart of our company is a vibrant culture that celebrates diversity, innovation, and collaboration. We believe in fostering an environment where ideas thrive and people excel. Our team is our greatest asset, and together, we work toward a common goal of creating value for our customers. </source>
+        <target> În centrul companiei noastre se află o cultură dinamică, ce celebrează diversitatea, inovația și colaborarea. Credem în cultivarea unui mediu în care ideile înfloresc și oamenii excelează. Echipa noastră este cel mai valoros atu, iar împreună lucrăm către un obiectiv comun: crearea de valoare pentru clienții noștri. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2371043107256001232" datatype="html">
+        <source>Our Values</source>
+        <target>Valorile noastre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1551822889361480705" datatype="html">
+        <source> These core values guide every decision we make: </source>
+        <target> Aceste valori de bază ghidează fiecare decizie pe care o luăm: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6096125935983173571" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Integrity:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Doing the right thing, always.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Integritate:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Alegem calea corectă, mereu.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8462015753594597778" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Innovation:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Pushing the boundaries of what’s possible.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Inovare:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Împingem limitele posibilului.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="564848481351096015" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Excellence:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Striving for the highest standards in everything we do.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Excelență:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Ne angajăm să ne ridicăm la cele mai ridicate standarde în tot ce facem.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4726917960685884776" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Customer Focus:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Putting our customers at the center of our universe.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Focus pe Client:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Plasăm clienții în centrul universului nostru.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/about.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="759687838251957893" datatype="html">
+        <source>Contact Us</source>
+        <target>Contactați-ne</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7675706907676273680" datatype="html">
+        <source> We’re here to help! Whether you have a question, need support, or just want to chat, we’re always happy to hear from you. </source>
+        <target> Suntem aici pentru a vă ajuta! Indiferent dacă aveți o întrebare, aveți nevoie de asistență sau pur și simplu vreți să discutați, suntem întotdeauna bucuroși să aflăm vești de la dumneavoastră. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7089309214364618459" datatype="html">
+        <source>Reach Out to Us</source>
+        <target>Luați legătura cu noi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5173904320028142182" datatype="html">
+        <source> You can contact us through any of the following channels: </source>
+        <target> Ne puteți contacta prin oricare dintre următoarele canale: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8684068455293269251" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Email:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> support@example.com</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Email:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> support@example.com</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3430319969815826612" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Phone:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> +1 234 567 890</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Telefon:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> +1 234 567 890</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3325740155590639718" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Address:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 1234 Innovation Boulevard, Tech City</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Adresă:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 1234 Strada Inovării, Orașul Tehnologiei</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9221730911539762110" datatype="html">
+        <source>Frequently Asked Questions</source>
+        <target>Întrebări frecvente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3816884023835196555" datatype="html">
+        <source> Looking for quick answers? Check out our FAQ section: </source>
+        <target> Căutați răspunsuri rapide? Consultați secțiunea noastră de Întrebări frecvente: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1552832414010596204" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>How do I get started?<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Simply reach out to us via email or phone, and we’ll guide you through the process.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Cum încep?<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Pur și simplu contactați-ne prin e-mail sau telefon, iar noi vă vom ghida în tot acest proces.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8946684921707716296" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>What are your working hours?<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> We’re available Monday to Friday, 9:00 AM - 6:00 PM.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Care intervalul orar de muncă?<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Avem deschis de luni până vineri, 9:00 - 18:00.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="315882555894847344" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Can I request a custom solution?<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Absolutely! We specialize in tailor-made solutions for all our clients.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Pot solicita o soluție personalizată?<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Absolut! Suntem specializați în soluții personalizate pentru toți clienții noștri.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4431714299480621812" datatype="html">
+        <source>Office Hours</source>
+        <target>Program de lucru</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2366106987710189649" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Monday - Friday:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 9:00 AM - 6:00 PM<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Saturday:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 10:00 AM - 4:00 PM<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Sunday:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Closed </source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Luni - Vineri:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 9:00 - 18:00<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Sâmbătă:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 10:00 - 16:00<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Duminică:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Închis </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">34,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1313665619614694934" datatype="html">
+        <source>Leave Us a Message</source>
+        <target>Lăsați-ne un mesaj</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10176969796148065" datatype="html">
+        <source>Your Name:</source>
+        <target>Numele dumneavoastră:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5907235624771846199" datatype="html">
+        <source>Your Email:</source>
+        <target>Email-ul dumneavoastră:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7579057603328453391" datatype="html">
+        <source>Your Message:</source>
+        <target>Mesajul dumneavoastră:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6490688569532630280" datatype="html">
+        <source>Send</source>
+        <target>Trimite</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1020230094808436634" datatype="html">
+        <source>Welcome to Our World</source>
+        <target>Bun venit în lumea noastră</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8321991221895212536" datatype="html">
+        <source> At our company, we’re driven by innovation and dedicated to delivering exceptional services that enhance your life. We aim to redefine excellence in every project, ensuring customer satisfaction remains at the heart of everything we do. </source>
+        <target> În cadrul companiei noastre, suntem motivați de inovație și dedicați furnizării unor servicii excepționale care să vă îmbunătățească viața. Ne propunem să redefinim excelența în fiecare proiect, asigurându-ne că satisfacția clienților rămâne în centrul a tot ceea ce facem. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1879343961502591479" datatype="html">
+        <source>Discover What We Offer</source>
+        <target>Descoperiți ceea ce oferim</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3591056560762327545" datatype="html">
+        <source> Explore a world of possibilities with us. Our extensive range of services, tailored solutions, and cutting-edge technology ensure you stay ahead in a competitive world. Here&apos;s a glimpse of what makes us unique: </source>
+        <target> Explorați o lume de posibilități alături de noi. Gama noastră extinsă de servicii, soluțiile personalizate și tehnologia de ultimă generație vă asigură un avantaj într-o lume competitivă. Iată o privire asupra a ceea ce ne face unici: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7846637840657782850" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Expert Guidance:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Years of experience delivering practical solutions for complex challenges.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Ghidare de expert:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Ani de experiență în furnizarea de soluții practice pentru provocări complexe.</target>        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7094501051395594580" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Innovative Approach:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Continuously evolving to meet the demands of a fast-paced world.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Abordare inovatoare:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Evoluăm continuu pentru a satisface cerințele unei lumi în ritm rapid.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7790503674840377403" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Global Reach:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Serving customers across continents with a commitment to excellence.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Acoperire globală:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Deservim clienți de pe toate continentele, cu un angajament pentru excelență.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2977977439526367510" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Personalized Service:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Custom-tailored solutions for every individual and business.</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Servicii personalizate:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> Soluții personalizate pentru fiecare individ și afacere.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4573119090244860505" datatype="html">
+        <source>Our Commitment</source>
+        <target>Angajamentul nostru</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="405337674909498321" datatype="html">
+        <source> We believe that the best relationships are built on trust, transparency, and a shared vision for success. Our team works tirelessly to bring ideas to life and create value that lasts. </source>
+        <target> Credem că cele mai bune relații se construiesc pe încredere, transparență și o viziune comună pentru succes. Echipa noastră lucrează neobosit pentru a da viață ideilor și pentru a crea valoare durabilă. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2594151815029741927" datatype="html">
+        <source>Customer Success Stories</source>
+        <target>Povești de succes ale clienților</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8101114812935700022" datatype="html">
+        <source> Don’t just take our word for it—hear what our customers have to say: </source>
+        <target> Nu ne credeți doar pe cuvânt—ascultați ce au de spus clienții noștri: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6599479040633392681" datatype="html">
+        <source> &quot;Working with this company was a game-changer for our business. Their expertise and dedication to delivering the best results truly set them apart.&quot; - Jane Doe, CEO </source>
+        <target> „Colaborarea cu această companie a fost un punct de cotitură pentru afacerea noastră. Expertiza lor și dedicația de a oferi cele mai bune rezultate îi diferențiază cu adevărat.” - Jane Doe, CEO </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1795501825350848831" datatype="html">
+        <source> &quot;Their innovative solutions helped us streamline operations and save significant costs. Highly recommend!&quot; - John Smith, Operations Manager </source>
+        <target> „Soluțiile lor inovatoare ne-au ajutat să optimizăm operațiunile și să economisim costuri semnificative. Recomand cu mare încredere!” - John Smith, Manager Operațiuni </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9063344890262493319" datatype="html">
+        <source>Our Services</source>
+        <source>Serviciile Noastre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1436928986932574224" datatype="html">
+        <source> Explore a comprehensive suite of services designed to meet your every need. From strategic consulting to hands-on implementation, we are your one-stop solution for success. </source>
+        <target> Explorați o gamă cuprinzătoare de servicii concepute pentru a răspunde fiecărei nevoi. De la consultanță strategică la implementare practică, suntem soluția dumneavoastră completă pentru succes. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="818336414584026715" datatype="html">
+        <source>Professional Consulting</source>
+        <target>Consultanță profesională</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2764104847745065418" datatype="html">
+        <source> With years of experience and a team of seasoned professionals, we offer insights and strategies that drive results. Whether you’re launching a new product or optimizing existing processes, our experts are here to guide you. </source>
+        <target> Cu ani de experiență și o echipă de profesioniști experimentați, oferim perspective și strategii care generează rezultate. Fie că lansați un nou produs sau optimizați procesele existente, experții noștri sunt aici pentru a vă ghida. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4176873646313392234" datatype="html">
+        <source>Business strategy and planning</source>
+        <target>Strategie și planificare de afaceri</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6943384080621268583" datatype="html">
+        <source>Process optimization</source>
+        <target>Optimizarea proceselor</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5335289918435076838" datatype="html">
+        <source>Market analysis</source>
+        <target>Analiza pieței</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6267660002728258553" datatype="html">
+        <source>Custom Software Development</source>
+        <target>Dezvoltare de software personalizat</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2755031872969826296" datatype="html">
+        <source> From concept to deployment, we deliver tailor-made software solutions that address your unique challenges. Our development services include: </source>
+        <target> De la concept până la implementare, livrăm soluții software personalizate care răspund provocărilor dumneavoastră unice. Serviciile noastre de dezvoltare includ: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6454635238165125019" datatype="html">
+        <source>Web application development</source>
+      <target>Dezvoltare de aplicații web</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4899154524113803021" datatype="html">
+        <source>Mobile app solutions</source>
+        <target>Soluții pentru aplicații mobile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6439062574691785044" datatype="html">
+        <source>Enterprise software systems</source>
+        <target>Sisteme software pentru întreprinderi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7810641201245743542" datatype="html">
+        <source>Training and Support</source>
+        <target>Instruire și suport</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3432844402370734384" datatype="html">
+        <source> Empower your team with the skills and knowledge they need to succeed. Our training programs and ongoing support ensure you get the most out of our solutions. </source>
+        <target> Oferiți echipei dumneavoastră competențele și cunoștințele necesare pentru a avea succes. Programele noastre de instruire și suportul continuu vă asigură că beneficiați la maximum de soluțiile noastre. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
