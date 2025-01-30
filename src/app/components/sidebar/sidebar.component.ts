@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -8,15 +8,20 @@ import { HttpClient } from '@angular/common/http';
 import submenuConfig from '../../config/submenu-config.json';
 import { SidebarService } from '../../services/sidebar.service';
 import sidebarConfig from '../../config/sidebar-config.json';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterModule, MatSidenavModule, MatButtonModule, MatListModule],
+  imports: [RouterModule, MatSidenavModule, MatButtonModule, MatListModule, TranslateModule],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  translate: TranslateService = inject(TranslateService);
+  languageService: LanguageService = inject(LanguageService);
+
   isOpen = false;
   config = sidebarConfig;
   subMenuItems: string[] = [];
@@ -33,6 +38,9 @@ export class SidebarComponent {
     this.sidebarService.isOpen$.subscribe((isOpen) => {
       this.isOpen = isOpen;
     })
+    this.languageService.currentLanguage.subscribe((lang) => {
+      this.translate.use(lang);
+    });
   }
   toggleSidebar() {
     if (!this.config.enabled) {
@@ -59,12 +67,6 @@ export class SidebarComponent {
 
    loadSubMenuItems(routeName: string) {
     const config = submenuConfig as { [key: string]: string[] };
-    this.subMenuItems = config[routeName]?.map((item) => this.formatMenuItem(item)) || [];
-  }
-
-  formatMenuItem(item: string): string {
-    return item
-      .replace(/-/g, ' ')
-      .replace(/\b\w/g, (char) => char.toUpperCase());
+    this.subMenuItems = config[routeName];
   }
 }

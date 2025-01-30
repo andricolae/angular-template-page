@@ -8,6 +8,7 @@ import { LanguageSwitcherComponent } from "../language-switcher/language-switche
 import { SidebarService } from '../../services/sidebar.service';
 import topMenuConfig from '../../config/top-menu-config.json';
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { LanguageService } from '../../services/language.service';
 
 interface MenuItem {
   label: string;
@@ -21,6 +22,9 @@ interface MenuItem {
   styleUrls: ['./top-menu.component.css']
 })
 export class TopMenuComponent {
+  translate: TranslateService = inject(TranslateService);
+  languageService: LanguageService = inject(LanguageService);
+
   menuItems: MenuItem[] = [];
   sticky = false;
   transparent = false;
@@ -36,6 +40,9 @@ export class TopMenuComponent {
 
   ngOnInit(): void {
     this.loadConfig();
+    this.languageService.currentLanguage.subscribe((lang) => {
+      this.translate.use(lang);
+    });
   }
 
   loadConfig(): void {
@@ -55,9 +62,8 @@ export class TopMenuComponent {
     this.sidebarService.toggleSidebar();
   }
 
-  translate: TranslateService = inject(TranslateService);
-  translateText(lang: string) {
-    console.log("translate clicked");
-    this.translate.use(lang);
-  }
+  // translateText(lang: string) {
+  //   console.log("translate clicked");
+  //   this.translate.use(lang);
+  // }
 }

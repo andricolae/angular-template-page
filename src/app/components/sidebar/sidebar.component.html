@@ -3,16 +3,18 @@
       <mat-nav-list>
         @for (item of subMenuItems; track subMenuItems) {
           <button mat-button class="submenu-button">
-            {{ item }}
-          </button>        }
+            {{ item | translate}}
+          </button>
+        }
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav #mobileSidenav mode="over" [opened]="isOpen" class="mobile-sidebar">
       <mat-nav-list>
         @for (item of subMenuItems; track subMenuItems) {
           <button mat-button class="submenu-button">
-            {{ item }}
-          </button>          }
+            {{ item | translate }}
+          </button>
+        }
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

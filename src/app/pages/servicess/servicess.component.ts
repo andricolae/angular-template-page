@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HighlightService } from '../../services/highlight.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-services',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './servicess.component.html',
   styleUrl: './servicess.component.css'
 })
 export class ServicesComponent {
+  translate: TranslateService = inject(TranslateService);
+  languageService: LanguageService = inject(LanguageService);
   constructor(private highlightService: HighlightService) {}
 
   ngOnInit() {
@@ -19,6 +23,9 @@ export class ServicesComponent {
           header.classList.add('highlight');
         }
       }
+    });
+    this.languageService.currentLanguage.subscribe((lang) => {
+      this.translate.use(lang);
     });
   }
 }
