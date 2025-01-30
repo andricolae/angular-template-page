@@ -1,6 +1,7 @@
 {
-  "HOME": "Home",
-  "ABOUT": "About Us",
-  "SERVICES": "Services",
-  "CONTACT": "Contact"
+  "english": "English",
+  "Home" : "Home",
+  "About Us" : "About Us",
+  "Services" : "Services",
+  "Contact" : "Contact"
 }

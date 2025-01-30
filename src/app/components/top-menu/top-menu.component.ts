@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from "../language-switcher/language-switcher.component";
 import { SidebarService } from '../../services/sidebar.service';
 import topMenuConfig from '../../config/top-menu-config.json';
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 
 interface MenuItem {
   label: string;
@@ -16,7 +17,7 @@ interface MenuItem {
 @Component({
   selector: 'app-top-menu',
   templateUrl: './top-menu.component.html',
-  imports: [MatToolbarModule, MatButtonModule, RouterModule, CommonModule, LanguageSwitcherComponent],
+  imports: [MatToolbarModule, MatButtonModule, RouterModule, CommonModule, LanguageSwitcherComponent, TranslateModule],
   styleUrls: ['./top-menu.component.css']
 })
 export class TopMenuComponent {
@@ -52,5 +53,11 @@ export class TopMenuComponent {
 
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
+  }
+
+  translate: TranslateService = inject(TranslateService);
+  translateText(lang: string) {
+    console.log("translate clicked");
+    this.translate.use(lang);
   }
 }

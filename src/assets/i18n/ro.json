@@ -1,6 +1,7 @@
 {
-  "HOME": "Acasă",
-  "ABOUT": "Despre Noi",
-  "SERVICES": "Servicii",
-  "CONTACT": "Contact"
+  "english": "Română",
+  "Home" : "Acasă",
+  "About Us" : "Despre Noi",
+  "Services" : "Servicii",
+  "Contact" : "Contact"
 }
