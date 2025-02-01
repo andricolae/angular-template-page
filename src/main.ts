@@ -8,6 +8,8 @@ import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/
 import { importProvidersFrom } from '@angular/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -25,6 +27,8 @@ bootstrapApplication(AppComponent, {
         defaultLanguage: 'en',
       })
     ]),
+    provideAnimationsAsync(),
+    NgxSpinnerModule,
     provideRouter(routes),
     provideHttpClient(withInterceptorsFromDi()),
     provideHttpClient(),
