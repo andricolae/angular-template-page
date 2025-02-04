@@ -69,7 +69,7 @@ export class AboutComponent {
   onCountryChange(): void {
     if (!this.selectedCountry) return;
     this.spinner.show();
-    this.http.post<any>('https://countriesnow.space/api/v01/countries/cities', { country: this.selectedCountry })
+    this.http.post<any>('https://countriesnow.space/api/v0.1/countries/cities', { country: this.selectedCountry })
       .pipe(
         map(response => response?.data || []),
         catchError(error => {

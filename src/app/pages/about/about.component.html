@@ -14,8 +14,8 @@
         }
       </select>
 
-      <h2>Select a City</h2>
       @if (cities.length > 0) {
+        <h2>Select a City</h2>
         <select class="custom-select">
           @for (city of cities; track city) {
             <option [value]="city">{{ city }}</option>
