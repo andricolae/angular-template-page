@@ -12,7 +12,9 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
-          "ro": {}
+          "ro": {
+            "translation": "src/locale/messages.ro.xlf"
+          }
         }
       },
       "architect": {
