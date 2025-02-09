@@ -365,7 +365,7 @@
         <source>Our Services</source>
         <source>Serviciile Noastre</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">2,3</context>
         </context-group>
       </trans-unit>
@@ -373,7 +373,7 @@
         <source> Explore a comprehensive suite of services designed to meet your every need. From strategic consulting to hands-on implementation, we are your one-stop solution for success. </source>
         <target> Explorați o gamă cuprinzătoare de servicii concepute pentru a răspunde fiecărei nevoi. De la consultanță strategică la implementare practică, suntem soluția dumneavoastră completă pentru succes. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">4,5</context>
         </context-group>
       </trans-unit>
@@ -381,7 +381,7 @@
         <source>Professional Consulting</source>
         <target>Consultanță profesională</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">8,9</context>
         </context-group>
       </trans-unit>
@@ -389,7 +389,7 @@
         <source> With years of experience and a team of seasoned professionals, we offer insights and strategies that drive results. Whether you’re launching a new product or optimizing existing processes, our experts are here to guide you. </source>
         <target> Cu ani de experiență și o echipă de profesioniști experimentați, oferim perspective și strategii care generează rezultate. Fie că lansați un nou produs sau optimizați procesele existente, experții noștri sunt aici pentru a vă ghida. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">10,11</context>
         </context-group>
       </trans-unit>
@@ -397,7 +397,7 @@
         <source>Business strategy and planning</source>
         <target>Strategie și planificare de afaceri</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">13,14</context>
         </context-group>
       </trans-unit>
@@ -405,7 +405,7 @@
         <source>Process optimization</source>
         <target>Optimizarea proceselor</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">14,15</context>
         </context-group>
       </trans-unit>
@@ -413,7 +413,7 @@
         <source>Market analysis</source>
         <target>Analiza pieței</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">15,16</context>
         </context-group>
       </trans-unit>
@@ -421,7 +421,7 @@
         <source>Custom Software Development</source>
         <target>Dezvoltare de software personalizat</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">20,21</context>
         </context-group>
       </trans-unit>
@@ -429,7 +429,7 @@
         <source> From concept to deployment, we deliver tailor-made software solutions that address your unique challenges. Our development services include: </source>
         <target> De la concept până la implementare, livrăm soluții software personalizate care răspund provocărilor dumneavoastră unice. Serviciile noastre de dezvoltare includ: </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">22,23</context>
         </context-group>
       </trans-unit>
@@ -437,7 +437,7 @@
         <source>Web application development</source>
       <target>Dezvoltare de aplicații web</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">25,26</context>
         </context-group>
       </trans-unit>
@@ -445,7 +445,7 @@
         <source>Mobile app solutions</source>
         <target>Soluții pentru aplicații mobile</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">26,27</context>
         </context-group>
       </trans-unit>
@@ -453,7 +453,7 @@
         <source>Enterprise software systems</source>
         <target>Sisteme software pentru întreprinderi</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">27,28</context>
         </context-group>
       </trans-unit>
@@ -461,7 +461,7 @@
         <source>Training and Support</source>
         <target>Instruire și suport</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">32,33</context>
         </context-group>
       </trans-unit>
@@ -469,7 +469,7 @@
         <source> Empower your team with the skills and knowledge they need to succeed. Our training programs and ongoing support ensure you get the most out of our solutions. </source>
         <target> Oferiți echipei dumneavoastră competențele și cunoștințele necesare pentru a avea succes. Programele noastre de instruire și suportul continuu vă asigură că beneficiați la maximum de soluțiile noastre. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">34,35</context>
         </context-group>
       </trans-unit>

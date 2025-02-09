@@ -6,8 +6,8 @@ import { LanguageService } from '../../services/language.service';
 @Component({
   selector: 'app-services',
   imports: [TranslateModule],
-  templateUrl: './servicess.component.html',
-  styleUrl: './servicess.component.css'
+  templateUrl: './company_services.component.html',
+  styleUrl: './company_services.component.css'
 })
 export class ServicesComponent {
   translate: TranslateService = inject(TranslateService);

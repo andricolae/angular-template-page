@@ -320,98 +320,98 @@
       <trans-unit id="9063344890262493319" datatype="html">
         <source>Our Services</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">2,3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1436928986932574224" datatype="html">
         <source> Explore a comprehensive suite of services designed to meet your every need. From strategic consulting to hands-on implementation, we are your one-stop solution for success. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">4,5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="818336414584026715" datatype="html">
         <source>Professional Consulting</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">8,9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2764104847745065418" datatype="html">
         <source> With years of experience and a team of seasoned professionals, we offer insights and strategies that drive results. Whether you’re launching a new product or optimizing existing processes, our experts are here to guide you. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">10,11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4176873646313392234" datatype="html">
         <source>Business strategy and planning</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">13,14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6943384080621268583" datatype="html">
         <source>Process optimization</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">14,15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5335289918435076838" datatype="html">
         <source>Market analysis</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">15,16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6267660002728258553" datatype="html">
         <source>Custom Software Development</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">20,21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2755031872969826296" datatype="html">
         <source> From concept to deployment, we deliver tailor-made software solutions that address your unique challenges. Our development services include: </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">22,23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6454635238165125019" datatype="html">
         <source>Web application development</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">25,26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4899154524113803021" datatype="html">
         <source>Mobile app solutions</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">26,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6439062574691785044" datatype="html">
         <source>Enterprise software systems</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">27,28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7810641201245743542" datatype="html">
         <source>Training and Support</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">32,33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3432844402370734384" datatype="html">
         <source> Empower your team with the skills and knowledge they need to succeed. Our training programs and ongoing support ensure you get the most out of our solutions. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servicess/servicess.component.html</context>
+          <context context-type="sourcefile">src/app/pages/company_services/company_services.component.html</context>
           <context context-type="linenumber">34,35</context>
         </context-group>
       </trans-unit>
