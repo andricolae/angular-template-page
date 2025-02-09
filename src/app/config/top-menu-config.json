@@ -3,6 +3,7 @@
     { "label": "Home", "link": "/home", "enabled": true },
     { "label": "About Us", "link": "/about", "enabled": true },
     { "label": "Services", "link": "/services", "enabled": true },
+    { "label": "API", "link": "/countries", "enabled": true },
     { "label": "Contact", "link": "/contact", "enabled": true }
   ],
   "sticky": true,

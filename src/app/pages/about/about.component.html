@@ -1,29 +1,6 @@
 <div class="page-content">
   <h1 i18n>{{ 'aboutHeader' | translate}}</h1>
 
-  <div class="container">
-    <ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-clip-rotate"></ngx-spinner>
-    @if (showErrorNotification) {
-      <div class="error-notification">{{ errorMessage }}</div>
-    }
-
-      <h2>Select a Country</h2>
-      <select class="custom-select" [(ngModel)]="selectedCountry" (change)="onCountryChange()">
-        @for (country of countries; track country.code) {
-          <option [value]="country.code">{{ country.name }}</option>
-        }
-      </select>
-
-      @if (cities.length > 0) {
-        <h2>Select a City</h2>
-        <select class="custom-select">
-          @for (city of cities; track city) {
-            <option [value]="city">{{ city }}</option>
-          }
-        </select>
-      }
-  </div>
-
   <p i18n>
     Since our inception, we’ve been on a mission to make a difference in the world through innovation, creativity, and a relentless focus on quality. Our story is one of growth, perseverance, and a dedication to pushing boundaries.
   </p>

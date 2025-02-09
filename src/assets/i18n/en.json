@@ -32,5 +32,6 @@
   "github" : "Github",
   "youtube" : "Youtube",
   "tiktok" : "TikTok",
-  "rednote" : "RedNote"
+  "rednote" : "RedNote",
+  "countriesHeader" : "Selection with external API calls"
 }
