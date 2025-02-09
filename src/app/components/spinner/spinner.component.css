@@ -1,0 +1,20 @@
+/* @import 'ngx-spinner/animations/ball-clip-rotate.css'; */
+
+ngx-spinner {
+  z-index: 9999 !important;
+  display: block !important;
+}
+
+::ng-deep .ngx-spinner-overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .loading-text {
+  color: white;
+  font-size: 18px;
+  /* font-weight: bold; */
+  margin-top: 10px;
+}

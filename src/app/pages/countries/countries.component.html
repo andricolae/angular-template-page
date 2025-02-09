@@ -2,26 +2,41 @@
   <h1 i18n>{{ 'countriesHeader' | translate}}</h1>
 
   <div class="container">
-    <ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-clip-rotate"></ngx-spinner>
-    @if (showErrorNotification) {
+    <!-- <ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-clip-rotate"></ngx-spinner> -->
+    <!-- @if (showErrorNotification) {
       <div class="error-notification">{{ errorMessage }}</div>
-    }
+    } -->
 
-      <h2>Select a Country</h2>
-      <select class="custom-select" [(ngModel)]="selectedCountry" (change)="onCountryChange()">
-        @for (country of countries; track country.code) {
-          <option [value]="country.code">{{ country.name }}</option>
-        }
-      </select>
+    <app-spinner></app-spinner>
+    <app-error [showError]="showErrorNotification" [errorMessage]="errorMessage"></app-error>
 
-      @if (cities.length > 0) {
-        <h2>Select a City</h2>
-        <select class="custom-select">
-          @for (city of cities; track city) {
-            <option [value]="city">{{ city }}</option>
-          }
-        </select>
+
+    <h2>Select a Country</h2>
+    <select class="custom-select"
+            [(ngModel)]="selectedCountry"
+            (change)="onCountryChange()">
+      <option value="" disabled selected>-- Select a country
+        --</option>
+
+      @for (country of countries; track country.code) {
+      <option [value]="country.code">{{ country.name }}
+      </option>
       }
+    </select>
+
+    @if (cities.length > 0) {
+    <h2>Select a City</h2>
+    <select class="custom-select">
+      <option value="" disabled selected>-- Select a city --
+      </option>
+      @for (city of cities; track city) {
+      <option [value]="city">{{ city }}</option>
+      }
+    </select>
+    }
   </div>
+  <button class="custom-button" type="button"
+          (click)="resetSelections()">Reset Form</button>
+
 
 </div>
