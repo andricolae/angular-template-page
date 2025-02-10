@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { ServicesComponent } from './pages/company_services/company_services.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,5 +13,5 @@ export const routes: Routes = [
   { path: 'countries', component: CountriesComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' }
+  { path: '**', component: NotFoundComponent }
 ];
