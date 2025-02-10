@@ -11,35 +11,69 @@ import { CityResponse } from '../models/city.model';
 export class CountryService {
   private countryApiUrl = 'https://restcountries.com/v3.1/region/europe';
   private cityApiUrl = 'https://countriesnow.space/api/v0.1/countries/cities';
+  private cacheDuration = 30 * 24 * 60 * 60 * 1000;
 
   constructor(private http: HttpClient) {}
 
+  private saveToCache(key: string, data: any): void {
+    const item = {
+      data,
+      expiry: Date.now() + this.cacheDuration,
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+  }
+
+  private loadFromCache<T>(key: string): T | null {
+    const item = localStorage.getItem(key);
+    if (!item) return null;
+
+    const parsedItem = JSON.parse(item);
+    if (Date.now() > parsedItem.expiry) {
+      localStorage.removeItem(key);
+      return null;
+    }
+    return parsedItem.data;
+  }
+
   getCountries(): Observable<Country[]> {
+    const cachedData = this.loadFromCache<Country[]>('cachedCountries');
+    if (cachedData) {
+      return of(cachedData);
+    }
+
     return this.http.get<any[]>(this.countryApiUrl).pipe(
-      map((data) =>
-        data?.map((country) => ({
+      map((data) => {
+        const countries = data?.map((country) => ({
           name: country.name.common,
           code: country.name.common,
-        })) || []
-      ),
+        })) || [];
+        this.saveToCache('cachedCountries', countries);
+        return countries;
+      }),
       catchError((error) => {
         console.error('Error loading countries', error);
         return of([]);
       })
     );
   }
+  getCities(countryName: string): Observable<CityResponse> {
+    const cacheKey = `cachedCities_${countryName}`;
+    const cachedData = this.loadFromCache<CityResponse>(cacheKey);
+    if (cachedData) {
+      return of(cachedData);
+    }
 
-  getCities(countryName: string): Observable<string[]> {
     return this.http.post<CityResponse>(this.cityApiUrl, { country: countryName }).pipe(
       map((response) => {
         if (!response || response.error || !Array.isArray(response.data)) {
-          throw new Error('Invalid city response format');
+          throw new Error(response.msg || 'Invalid city response format');
         }
-        return response.data;
+        this.saveToCache(cacheKey, response);
+        return response;
       }),
       catchError((error) => {
         console.error('Error loading cities', error);
-        return of([]);
+        return of({ error: true, msg: 'Failed to load cities.', data: [] });
       })
     );
   }

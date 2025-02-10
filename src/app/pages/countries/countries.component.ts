@@ -9,6 +9,7 @@ import { SpinnerComponent } from '../../components/spinner/spinner.component';
 import { ErrorComponent } from '../../components/error/error.component';
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../models/country.model';
+import { CityResponse } from '../../models/city.model';
 
 @Component({
   selector: 'app-countries',
@@ -100,6 +101,7 @@ export class CountriesComponent {
     this.countryService.getCountries().subscribe({
       next: (data) => {
         this.countries = data;
+        this.showErrorNotification = false;
         this.spinner.hide();
       },
       error: (err) => {
@@ -114,8 +116,13 @@ export class CountriesComponent {
     this.spinner.show();
 
     this.countryService.getCities(this.selectedCountry).subscribe({
-      next: (data) => {
-        this.cities = data;
+      next: (response: CityResponse) => {
+        if (response.error) {
+          this.showError(response.msg);
+        } else {
+          this.cities = response.data;
+          this.showErrorNotification = false;
+        }
         this.spinner.hide();
       },
       error: (err) => {
@@ -132,5 +139,6 @@ export class CountriesComponent {
   resetSelections() {
     this.selectedCountry = '';
     this.cities = [];
+    this.showErrorNotification = false;
   }
 }
