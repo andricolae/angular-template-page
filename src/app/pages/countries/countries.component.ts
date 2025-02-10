@@ -53,7 +53,7 @@ export class CountriesComponent {
         this.showErrorNotification = false;
       },
       error: (err) => {
-        this.showError(err.message);
+        this.showError("No countries found. A network error has occurred!");
       },
     });
   }
@@ -74,7 +74,7 @@ export class CountriesComponent {
         this.spinner.hide();
       },
       error: (err) => {
-        this.showError(err.message);
+        this.showError("A network error has occurred! Try again later.");
       },
     });
   }

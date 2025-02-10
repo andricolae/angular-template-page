@@ -51,7 +51,6 @@ export class CountryService {
         return countries;
       }),
       catchError((error) => {
-        console.error('Error loading countries', error);
         return of([]);
       })
     );
@@ -72,14 +71,12 @@ export class CountryService {
         return response;
       }),
       catchError((error) => {
-        console.error('Error loading cities', error);
         return of({ error: true, msg: 'Failed to load cities.', data: [] });
       })
     );
   }
 
   private handleError(error: any): Observable<never> {
-    console.error('API Error:', error);
     return throwError(() => new Error('Something went wrong while fetching data.'));
   }
 }
