@@ -1,14 +1,18 @@
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" [opened]="isOpen" class="desktop-sidebar">
-      <mat-nav-list>
-        @for (item of subMenuItems; track subMenuItems) {
-          <button mat-button class="submenu-button">
-            {{ item | translate}}
-          </button>
-        }
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav #mobileSidenav mode="over" [opened]="isOpen" class="mobile-sidebar">
+
+  <mat-sidenav #sidenav [mode]="isMobile ? 'over' : 'side'"
+              [opened]="isOpen"
+              class="{{ isMobile ? 'mobile-sidebar' : 'desktop-sidebar' }}">
+    <mat-nav-list>
+      @for (item of subMenuItems; track subMenuItems) {
+      <button mat-button class="submenu-button">
+        {{ item | translate}}
+      </button>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- <mat-sidenav #mobileSidenav mode="over" [opened]="isOpen" class="mobile-sidebar">
       <mat-nav-list>
         @for (item of subMenuItems; track subMenuItems) {
           <button mat-button class="submenu-button">
@@ -16,8 +20,10 @@
           </button>
         }
       </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <ng-content></ng-content>
-    </mat-sidenav-content>
+    </mat-sidenav> -->
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+
 </mat-sidenav-container>

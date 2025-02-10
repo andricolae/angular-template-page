@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -26,7 +26,11 @@ export class SidebarComponent {
   config = sidebarConfig;
   subMenuItems: string[] = [];
 
-  constructor(private highlightService: HighlightService, private router: Router, private http: HttpClient, private sidebarService: SidebarService) {}
+  isMobile: boolean = window.innerWidth <= 768;
+
+  constructor(private highlightService: HighlightService, private router: Router, private http: HttpClient, private sidebarService: SidebarService) {
+    this.updateSidebarMode();
+  }
 
   ngOnInit() {
     this.router.events.subscribe((event) => {
@@ -42,21 +46,6 @@ export class SidebarComponent {
       this.translate.use(lang);
     });
   }
-  toggleSidebar() {
-    if (!this.config.enabled) {
-      return;
-    }
-
-    this.isOpen = !this.isOpen;
-    const contentElement = document.querySelector('mat-sidenav-content') as HTMLElement;
-    if (contentElement) {
-      if (window.innerWidth <= 768) {
-        contentElement.style.marginTop = this.isOpen ? '300px' : '0';
-      } else {
-        contentElement.style.marginLeft = this.isOpen ? '250px' : '0';
-      }
-    }
-  }
 
   highlightHeader(headerId: string) {
     const currentRoute = this.router.url.split('#')[0];
@@ -68,5 +57,31 @@ export class SidebarComponent {
    loadSubMenuItems(routeName: string) {
     const config = submenuConfig as { [key: string]: string[] };
     this.subMenuItems = config[routeName];
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = event.target.innerWidth <= 768;
+    this.updateSidebarMode();
+  }
+
+  updateSidebarMode() {
+    if (this.isMobile) {
+      this.isOpen = false;
+    } else {
+      this.isOpen = true;
+    }
+  }
+
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
+    const contentElement = document.querySelector('mat-sidenav-content') as HTMLElement;
+    if (contentElement) {
+      if (this.isMobile) {
+        contentElement.style.marginTop = this.isOpen ? '300px' : '0';
+      } else {
+        contentElement.style.marginLeft = this.isOpen ? '250px' : '0';
+      }
+    }
   }
 }

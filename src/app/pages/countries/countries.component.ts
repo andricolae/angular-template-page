@@ -102,7 +102,7 @@ export class CountriesComponent {
       next: (data) => {
         this.countries = data;
         this.showErrorNotification = false;
-        this.spinner.hide();
+        // this.spinner.hide();
       },
       error: (err) => {
         this.showError(err.message);
