@@ -1,46 +1,8 @@
 h1, h2, h3 {
   margin: 1rem 0;
 }
+
 .highlight {
   background-color: yellow;
   transition: background-color 0.3s ease;
-}
-
-.custom-select {
-  width: 30%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: #fff;
-  color: #474747;
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  outline: none;
-  transition: border-color 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.custom-select:hover {
-  border-color: #caa500;
-}
-
-.custom-select:focus {
-  border-color: #ffd000;
-  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.3);
-}
-
-.error-notification {
-  position: fixed;
-  top: 207px;
-  right: 20px;
-  background: rgba(255, 174, 174, 0.9);
-  color: rgb(75, 74, 74);
-  padding: 12px 18px;
-  border-radius: 6px;
-  /* font-weight: bold; */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 10000;
-  display: block;
 }

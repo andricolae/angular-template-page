@@ -4,7 +4,7 @@
               [opened]="isOpen"
               class="{{ isMobile ? 'mobile-sidebar' : 'desktop-sidebar' }}">
     <mat-nav-list>
-      @for (item of subMenuItems; track subMenuItems) {
+      @for (item of subMenuItems; track item) {
       <button mat-button class="submenu-button">
         {{ item | translate}}
       </button>

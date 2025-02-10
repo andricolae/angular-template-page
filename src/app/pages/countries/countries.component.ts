@@ -46,63 +46,11 @@ export class CountriesComponent {
     this.fetchCountries();
   }
 
-  // loadCountries(): void {
-  //   this.http.get<any[]>('https://restcountries.com/v3.1/region/europe')
-  //     .pipe(
-  //       map(data => data?.map(country => ({
-  //         name: country.name.common,
-  //         code: country.name.common
-  //       })) || []),
-  //       catchError((error: any) => {
-  //         console.error('Error loading countries', error);
-  //         this.errorMessage = 'Failed to load countries. Please check your connection and try again.';
-  //         this.showErrorNotification = true;
-  //         return of([]);
-  //       }),
-  //       finalize(() => this.spinner.hide())
-  //     )
-  //     .subscribe(data => {
-  //       if (data.length > 0) {
-  //         this.countries = data;
-  //         this.showErrorNotification = false;
-  //       } else {
-  //         this.errorMessage = 'No countries found. Please try again later.';
-  //         this.showErrorNotification = true;
-  //       }
-  //     });
-  // }
-
-  // onCountryChange(): void {
-  //   if (!this.selectedCountry) return;
-  //   this.spinner.show();
-  //   this.http.post<any>('https://countriesnow.space/api/v0.1/countries/cities', { country: this.selectedCountry })
-  //     .pipe(
-  //       map(response => response?.data || []),
-  //       catchError(error => {
-  //         console.error('Error loading cities', error);
-  //         this.errorMessage = 'Failed to load cities. Please check your connection and try again.';
-  //         this.showErrorNotification = true;
-  //         return of([]);
-  //       }),
-  //       finalize(() => this.spinner.hide())
-  //     )
-  //     .subscribe(data => {
-  //       if (data.length > 0) {
-  //         this.cities = data;
-  //         this.showErrorNotification = false;
-  //       } else {
-  //         this.errorMessage = 'No cities found for this country. Please try another selection.';
-  //         this.showErrorNotification = true;
-  //       }
-  //     });
-  // }
-
   fetchCountries() {
     this.countryService.getCountries().subscribe({
       next: (data) => {
         this.countries = data;
         this.showErrorNotification = false;
-        // this.spinner.hide();
       },
       error: (err) => {
         this.showError(err.message);
