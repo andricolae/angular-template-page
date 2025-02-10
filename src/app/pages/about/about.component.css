@@ -6,11 +6,6 @@ h1, h2, h3 {
   transition: background-color 0.3s ease;
 }
 
-ngx-spinner {
-  z-index: 9999 !important;
-  display: block !important;
-}
-
 .custom-select {
   width: 30%;
   padding: 10px;

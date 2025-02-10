@@ -2,12 +2,13 @@ import { Component, inject, ViewChild } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language.service';
 import { HighlightService } from '../../services/highlight.service';
-import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { catchError, finalize, map, of } from 'rxjs';
 import { SpinnerComponent } from '../../components/spinner/spinner.component';
 import { ErrorComponent } from '../../components/error/error.component';
+import { CountryService } from '../../services/country.service';
+import { Country } from '../../models/country.model';
 
 @Component({
   selector: 'app-countries',
@@ -17,8 +18,8 @@ import { ErrorComponent } from '../../components/error/error.component';
 })
 export class CountriesComponent {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;
-  countries: any[] = [];
-  cities: any[] = [];
+  countries: Country[] = [];
+  cities: string[] = [];
   selectedCountry: string = '';
   selectedCity: string = '';
   errorMessage: string = '';
@@ -26,7 +27,7 @@ export class CountriesComponent {
 
   translate: TranslateService = inject(TranslateService);
   languageService: LanguageService = inject(LanguageService);
-  constructor(private highlightService: HighlightService, private http: HttpClient) { }
+  constructor(private highlightService: HighlightService, private http: HttpClient, private countryService: CountryService) { }
 
   ngOnInit() {
     this.highlightService.highlightedHeader$.subscribe((headerId) => {
@@ -41,66 +42,91 @@ export class CountriesComponent {
     this.languageService.currentLanguage.subscribe((lang) => {
       this.translate.use(lang);
     });
-    this.loadCountries();
+    this.fetchCountries();
   }
 
-  loadCountries(): void {
-    // this.spinner.show();
-    this.http.get<any[]>('https://restcountries.com/v3.1/region/europe')
-      .pipe(
-        map(data => data?.map(country => ({
-          name: country.name.common,
-          code: country.name.common
-        })) || []),
-        catchError((error: any) => {
-          console.error('Error loading countries', error);
-          // this.handleError('Failed to load countries. Please check your connection and try again.');
-          this.errorMessage = 'Failed to load countries. Please check your connection and try again.';
-          this.showErrorNotification = true;
-          return of([]);
-        }),
-        finalize(() => this.spinner.hide())
-      )
-      .subscribe(data => {
-        if (data.length > 0) {
-          this.countries = data;
-          this.showErrorNotification = false;
-        } else {
-          this.errorMessage = 'No countries found. Please try again later.';
-          this.showErrorNotification = true;
-        }
-      });
+  // loadCountries(): void {
+  //   this.http.get<any[]>('https://restcountries.com/v3.1/region/europe')
+  //     .pipe(
+  //       map(data => data?.map(country => ({
+  //         name: country.name.common,
+  //         code: country.name.common
+  //       })) || []),
+  //       catchError((error: any) => {
+  //         console.error('Error loading countries', error);
+  //         this.errorMessage = 'Failed to load countries. Please check your connection and try again.';
+  //         this.showErrorNotification = true;
+  //         return of([]);
+  //       }),
+  //       finalize(() => this.spinner.hide())
+  //     )
+  //     .subscribe(data => {
+  //       if (data.length > 0) {
+  //         this.countries = data;
+  //         this.showErrorNotification = false;
+  //       } else {
+  //         this.errorMessage = 'No countries found. Please try again later.';
+  //         this.showErrorNotification = true;
+  //       }
+  //     });
+  // }
+
+  // onCountryChange(): void {
+  //   if (!this.selectedCountry) return;
+  //   this.spinner.show();
+  //   this.http.post<any>('https://countriesnow.space/api/v0.1/countries/cities', { country: this.selectedCountry })
+  //     .pipe(
+  //       map(response => response?.data || []),
+  //       catchError(error => {
+  //         console.error('Error loading cities', error);
+  //         this.errorMessage = 'Failed to load cities. Please check your connection and try again.';
+  //         this.showErrorNotification = true;
+  //         return of([]);
+  //       }),
+  //       finalize(() => this.spinner.hide())
+  //     )
+  //     .subscribe(data => {
+  //       if (data.length > 0) {
+  //         this.cities = data;
+  //         this.showErrorNotification = false;
+  //       } else {
+  //         this.errorMessage = 'No cities found for this country. Please try another selection.';
+  //         this.showErrorNotification = true;
+  //       }
+  //     });
+  // }
+
+  fetchCountries() {
+    this.countryService.getCountries().subscribe({
+      next: (data) => {
+        this.countries = data;
+        this.spinner.hide();
+      },
+      error: (err) => {
+        this.showError(err.message);
+      },
+    });
   }
 
-  onCountryChange(): void {
+  fetchCities() {
     if (!this.selectedCountry) return;
+
     this.spinner.show();
-    this.http.post<any>('https://countriesnow.space/api/v0.1/countries/cities', { country: this.selectedCountry })
-      .pipe(
-        map(response => response?.data || []),
-        catchError(error => {
-          console.error('Error loading cities', error);
-          this.errorMessage = 'Failed to load cities. Please check your connection and try again.';
-          this.showErrorNotification = true;
-          return of([]);
-        }),
-        finalize(() => this.spinner.hide())
-      )
-      .subscribe(data => {
-        if (data.length > 0) {
-          this.cities = data;
-          this.showErrorNotification = false;
-        } else {
-          this.errorMessage = 'No cities found for this country. Please try another selection.';
-          this.showErrorNotification = true;
-        }
-      });
+
+    this.countryService.getCities(this.selectedCountry).subscribe({
+      next: (data) => {
+        this.cities = data;
+        this.spinner.hide();
+      },
+      error: (err) => {
+        this.showError(err.message);
+      },
+    });
   }
 
-  handleError(message: string): void {
-    console.error('Displaying error:', message);
-    // this.errorMessage = message;
-    // this.showErrorNotification = true;
+  showError(message: string): void {
+    this.errorMessage = message;
+    this.showErrorNotification = true;
   }
 
   resetSelections() {

@@ -1,5 +1,3 @@
-/* @import 'node_modules/ngx-spinner/animations/ball-scale-multiple.css'; */
-
 ngx-spinner {
   z-index: 9999 !important;
   display: block !important;

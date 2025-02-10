@@ -2,10 +2,6 @@
   <h1 i18n>{{ 'countriesHeader' | translate}}</h1>
 
   <div class="container">
-    <!-- <ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-clip-rotate"></ngx-spinner> -->
-    <!-- @if (showErrorNotification) {
-      <div class="error-notification">{{ errorMessage }}</div>
-    } -->
 
     <app-spinner></app-spinner>
     <app-error [showError]="showErrorNotification" [errorMessage]="errorMessage"></app-error>
@@ -14,7 +10,7 @@
     <h2>Select a Country</h2>
     <select class="custom-select"
             [(ngModel)]="selectedCountry"
-            (change)="onCountryChange()">
+            (change)="fetchCities()">
       <option value="" disabled selected>-- Select a country
         --</option>
 
@@ -37,6 +33,5 @@
   </div>
   <button class="custom-button" type="button"
           (click)="resetSelections()">Reset Form</button>
-
 
 </div>
