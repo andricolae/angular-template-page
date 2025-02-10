@@ -5,6 +5,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { ServicesComponent } from './pages/company_services/company_services.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AuthComponent } from './auth/auth.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ export const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'countries', component: CountriesComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'auth', component: AuthComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
