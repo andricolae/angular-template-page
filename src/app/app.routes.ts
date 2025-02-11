@@ -6,14 +6,15 @@ import { CountriesComponent } from './pages/countries/countries.component';
 import { ServicesComponent } from './pages/company_services/company_services.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'services', component: ServicesComponent },
-  { path: 'countries', component: CountriesComponent },
+  { path: 'countries', component: CountriesComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent },
   { path: 'auth', component: AuthComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];

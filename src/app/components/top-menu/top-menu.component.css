@@ -39,3 +39,14 @@ nav {
 .toggle-btn:hover {
   color: #ddd;
 }
+
+.btnLogout{
+  background-color: #1a1a2e;
+  color: #f5f5f5;
+  padding: 12px 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
