@@ -1,8 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, map, Observable, Subject, switchMap, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, from, map, Observable, Subject, switchMap, take, tap, throwError } from 'rxjs';
 import { User } from '../auth/user.model';
 import { Router } from '@angular/router';
+import { DatabaseService } from './database.service';
 interface AuthResponseData {
   idToken: string;
   email: string;
@@ -21,11 +22,15 @@ export class AuthService {
 
   user = new BehaviorSubject<User | null>(null);
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private databaseService: DatabaseService) {
     this.autoLogin();
   }
 
-  signup(email: string, password: string): Observable<AuthResponseData> {
+  signup(email: string, password: string, language: string): Observable<AuthResponseData> {
+    const hashedPassword = btoa(password);
+    const theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const detectedLanguage = navigator.language.slice(0, 2);
+
     return this.http.post<AuthResponseData>(this.signUpUrl, {
       email,
       password,
@@ -33,11 +38,19 @@ export class AuthService {
     })
       .pipe(
         switchMap((resData) => {
-          return this.sendVerificationEmail(resData.idToken);
+          return this.sendVerificationEmail(resData.idToken).pipe(
+            switchMap(() => {
+              return this.databaseService.saveUserProfile(resData.localId, email, hashedPassword, detectedLanguage, theme);
+            }),
+            tap(() => {
+              // this.translationService.setLanguage(detectedLanguage);
+            }),
+            map(() => resData)
+          );
         }),
         catchError(this.handleError),
         tap(resData => {
-          this.handleAuthentification(resData.email,
+          this.handleAuthentication(resData.email,
             resData.localId,
             resData.idToken,
             +resData.expiresIn);
@@ -61,7 +74,7 @@ export class AuthService {
     this.router.navigate(['/auth']);
   }
 
-  private handleAuthentification(email: string, userId: string, token: string, expiresIn: number) {
+  private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
@@ -86,18 +99,54 @@ export class AuthService {
                   }
                 }));
               }
-              return [resData];
+
+              return from(this.databaseService.getUserProfile(resData.localId)).pipe(
+                tap(userProfile => {
+                  if (userProfile && userProfile.language) {
+                    // this.translationService.setLanguage(userProfile.language);
+                  }
+                }),
+                map(() => resData)
+              );
             })
           );
         }),
         catchError(this.handleError),
         tap(resData => {
-          this.handleAuthentification(resData.email,
+          this.handleAuthentication(resData.email,
             resData.localId,
             resData.idToken,
             +resData.expiresIn);
         })
       );
+  }
+
+  updateUserPassword(newPassword: string): Observable<any> {
+    return this.user.pipe(
+        take(1),
+        switchMap(user => {
+            if (!user || !user.token) {
+                return throwError(() => new Error('No authenticated user!'));
+            }
+
+            return this.http.post<any>(
+                `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${this.apiKey}`,
+                {
+                    idToken: user.token,
+                    password: newPassword,
+                    returnSecureToken: true
+                }
+            ).pipe(
+                switchMap(resData => {
+                    return from(this.databaseService.updateUserPassword(user.id, newPassword)).pipe(
+                        map(() => resData)
+                    );
+                }),
+                tap(() => console.log('Password successfully updated in Firebase Authentication and Firestore.')),
+                catchError(this.handleError)
+            );
+        })
+    );
   }
 
   autoLogin() {
@@ -150,23 +199,23 @@ export class AuthService {
         errorMessage = 'This email exists already.';
         break;
       case 'EMAIL_NOT_FOUND':
-          errorMessage = 'Credentials were not found.';
-          break;
+        errorMessage = 'Credentials were not found.';
+        break;
       case 'INVALID_PASSWORD':
-          errorMessage = 'Credentials were not found.';
-          break;
+        errorMessage = 'Credentials were not found.';
+        break;
       case 'INVALID_LOGIN_CREDENTIALS':
-          errorMessage = 'Invalid login credentials.';
-          break;
+        errorMessage = 'Invalid login credentials.';
+        break;
       case 'USER_DISABLED':
-          errorMessage = 'This user has been disabled.';
-          break;
+        errorMessage = 'This user has been disabled.';
+        break;
       case 'INVALID_ID_TOKEN':
-          errorMessage = 'Invalid session token. Please login again.';
-          break;
+        errorMessage = 'Invalid session token. Please login again.';
+        break;
       case 'EMAIL_NOT_VERIFIED':
-          errorMessage = 'Please verify your email before logging in.';
-          break;
+        errorMessage = 'Please verify your email before logging in.';
+        break;
     }
     return throwError(() => new Error(errorMessage));
   }
