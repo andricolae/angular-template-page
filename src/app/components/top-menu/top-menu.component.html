@@ -6,10 +6,6 @@
 
     <span class="spacer"></span>
     <nav>
-
-      <!-- <button (click)="translateText('en')">EN</button>
-      <button (click)="translateText('ro')">RO</button> -->
-      <!-- <h4 style="color: black;">{{'english' | translate}}</h4> -->
       @for (item of menuItems; track item) {
         @if (item.enabled) {
           <a mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label | translate }}</a>

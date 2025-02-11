@@ -10,6 +10,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { environment } from './environments/environment';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,6 +30,8 @@ bootstrapApplication(AppComponent, {
         defaultLanguage: 'en',
       })
     ]),
+    provideFirebaseApp(() => initializeApp(environment)),
+    provideAuth(() => getAuth()),
     provideAnimationsAsync(),
     NgxSpinnerModule,
     provideRouter(routes),

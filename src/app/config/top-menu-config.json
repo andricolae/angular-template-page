@@ -5,7 +5,7 @@
     { "label": "Services", "link": "/services", "enabled": true },
     { "label": "API", "link": "/countries", "enabled": true },
     { "label": "Contact", "link": "/contact", "enabled": true },
-    { "label": "My Account", "link": "/auth", "enabled": true }
+    { "label": "My Account ▼", "link": "/auth", "enabled": true }
   ],
   "sticky": true,
   "transparent": false,

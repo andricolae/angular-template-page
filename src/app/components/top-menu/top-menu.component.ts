@@ -9,6 +9,8 @@ import { SidebarService } from '../../services/sidebar.service';
 import topMenuConfig from '../../config/top-menu-config.json';
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { LanguageService } from '../../services/language.service';
+import { AuthService } from '../../services/auth.service';
+import { AuthStateService } from '../../services/auth-state.service';
 
 interface MenuItem {
   label: string;
@@ -25,16 +27,25 @@ export class TopMenuComponent {
   translate: TranslateService = inject(TranslateService);
   languageService: LanguageService = inject(LanguageService);
 
+  username: string = '';
   menuItems: MenuItem[] = [];
   sticky = false;
   transparent = false;
   enabled = false;
 
-  constructor(private router: Router, private highlightService: HighlightService, private sidebarService: SidebarService) {
+  constructor(private authStateService: AuthStateService, private router: Router, private highlightService: HighlightService, private sidebarService: SidebarService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.highlightService.setHighlightedHeader(null);
       }
+    });
+    this.authStateService.username$.subscribe(username => {
+      const accountItem = this.menuItems.find(item => item.link === '/auth');
+      if (accountItem) {
+        accountItem.label = username ? `Hi, ${username}` : 'My Account';
+      }
+      console.log("accountItem: ", accountItem);
+      console.log("username: ", username);
     });
   }
 
@@ -61,9 +72,4 @@ export class TopMenuComponent {
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
   }
-
-  // translateText(lang: string) {
-  //   console.log("translate clicked");
-  //   this.translate.use(lang);
-  // }
 }
