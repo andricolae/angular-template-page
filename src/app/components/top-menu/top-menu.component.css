@@ -41,10 +41,11 @@ nav {
 }
 
 .btnLogout{
-  background-color: #1a1a2e;
-  color: #f5f5f5;
+  background-color: #ffe13a;
+  color: #000000;
   padding: 12px 18px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  /* font-size: 16px; */
   border: none;
   border-radius: 8px;
   cursor: pointer;

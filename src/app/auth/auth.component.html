@@ -28,10 +28,9 @@
               (input)="clearMessages()" />
       </div>
       <div>
-        <button type="button" class="btn-link"
+        <button type="button" class="btn-secondary"
                 (click)="onForgotPassword(emailInput)"
-                (input)="clearMessages()">Forgot
-          Password?</button>
+                (input)="clearMessages()">Reset Password</button>
       </div>
       }
       @else
@@ -54,11 +53,11 @@
       <div>
         <button class="btn btn-primary" type="submit"
                 [disabled]="!authForm.valid">
-          {{ isLoginMode ? 'Login' : 'SignUp' }}
+                {{ isLoginMode ? 'Log In' : 'Sign Up' }}
         </button>
         <button class="btn btn-primary"
                 (click)="onSwitchMode()" type="button">
-          Switch to {{isLoginMode ? 'SignUp' : 'Login'}}
+                {{isLoginMode ? 'Register' : 'Log In'}}
         </button>
       </div>
     </form>
