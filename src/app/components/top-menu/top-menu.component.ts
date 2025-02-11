@@ -42,7 +42,7 @@ export class TopMenuComponent {
     this.authStateService.username$.subscribe(username => {
       const accountItem = this.menuItems.find(item => item.link === '/auth');
       if (accountItem) {
-        accountItem.label = username ? `Hi, ${username}` : 'My Account';
+        accountItem.label = username ? `Hi, ${username} ▼` : 'My Account ▼';
       }
       console.log("accountItem: ", accountItem);
       console.log("username: ", username);
