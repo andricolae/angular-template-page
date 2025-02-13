@@ -4,6 +4,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ErrorComponent } from '../components/error/error.component';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-auth',
@@ -16,8 +17,15 @@ export class AuthComponent {
   isLoading = false;
   errorMessage: string = '';
   showErrorNotification: boolean = false;
+  theme: string = 'light';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private themeService: ThemeService) { }
+
+  ngOnInit() {
+    this.themeService.theme$.subscribe(theme => {
+      this.theme = theme;
+    });
+  }
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;

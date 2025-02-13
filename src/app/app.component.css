@@ -1,3 +1,18 @@
+:root {
+  --background-light: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  --background-dark: #fcfcfc;
+}
+
+#app-root {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  margin-top: 2.3rem;
+  min-height: 100vh;
+  background: var(--background-light);
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -9,4 +24,8 @@ main {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin: 1rem;
+}
+
+html[data-theme="dark"] #app-root {
+  background: var(--background-dark) !important;
 }
