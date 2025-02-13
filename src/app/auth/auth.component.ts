@@ -3,18 +3,19 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { ErrorComponent } from '../components/error/error.component';
 
 @Component({
   selector: 'app-auth',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, ErrorComponent],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css'
 })
 export class AuthComponent {
   isLoginMode = true;
   isLoading = false;
-  error: string | null = null;
-  successMessage: string | null = null;
+  errorMessage: string = '';
+  showErrorNotification: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -44,7 +45,8 @@ export class AuthComponent {
         },
         error: (errorMessage) => {
           console.log(errorMessage);
-          this.error = errorMessage;
+          this.errorMessage = errorMessage;
+          this.showError(this.errorMessage);
           this.isLoading = false;
         }
       });
@@ -56,36 +58,46 @@ export class AuthComponent {
           console.log(resData);
           this.isLoading = false;
           this.isLoginMode = !this.isLoginMode;
-          this.successMessage = "Verification email sent! Please check your inbox.";
+          this.errorMessage = "Verification email sent! Please check your inbox.";
+          this.showError(this.errorMessage);
         },
         error: (errorMessage) => {
           console.log(errorMessage);
-          this.error = errorMessage;
+          this.errorMessage = errorMessage;
+          this.showError(this.errorMessage);
           this.isLoading = false;
         }
       });
     }
     form.reset();
   }
+
   clearMessages() {
-    this.error = null;
-    this.successMessage = null;
+    this.errorMessage = '';
+    this.showErrorNotification = false;
   }
+
   onForgotPassword(emailInput: HTMLInputElement) {
     const email = emailInput.value;
     if (!email) {
-      this.error = "Please enter your email.";
+      this.errorMessage = "Please enter your email.";
+      this.showError(this.errorMessage);
       return;
     }
     this.authService.resetPassword(email).subscribe({
       next: () => {
-        this.successMessage = "Password reset email sent! Check your inbox.";
-        this.error = null;
+        this.errorMessage = "Password reset email sent! Check your inbox.";
+        this.showError(this.errorMessage);
       },
       error: (errorMessage) => {
         console.log(errorMessage);
-        this.error = errorMessage;
+        this.showError(errorMessage);
       }
     });
+  }
+
+  showError(message: string): void {
+    this.errorMessage = message;
+    this.showErrorNotification = true;
   }
 }

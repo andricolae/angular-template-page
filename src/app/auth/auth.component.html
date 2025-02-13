@@ -1,67 +1,63 @@
 <h3>{{ isLoginMode ? 'Login' : 'SignUp' }}</h3>
 <div class="row">
+
+  <app-error [showError]="showErrorNotification"
+            [errorMessage]="errorMessage"></app-error>
+
   <div class="col-xs-12 col-md-6 col-md-offset-3">
     <form #authForm="ngForm"
           (ngSubmit)="onSubmit(authForm)">
-      <div class="alert-danger" *ngIf="error">
-        {{ error }}
-      </div>
-      <div class="alert alert-success"
-           *ngIf="successMessage">
-        {{ successMessage }}
-      </div>
-      @if(isLoginMode)
-      {
-      <div class="form-group">
-        <label for="email">E-Mail</label>
-        <input type="email" id="email" class="form-control"
-              placeholder="Enter your email" ngModel
-              name="email" #emailInput
-              (input)="clearMessages()" />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password"
-              class="form-control"
-              placeholder="Enter your password" ngModel
-              name="password" #password
-              (input)="clearMessages()" />
-      </div>
-      <div>
-        <button type="button" class="btn-secondary"
-                (click)="onForgotPassword(emailInput)"
-                (input)="clearMessages()">Reset Password</button>
-      </div>
-      }
-      @else
-      {
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" class="form-control"
-              placeholder="Enter your email" ngModel
-              name="email" (input)="clearMessages()" />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password"
-              class="form-control"
-              placeholder="Enter your password" ngModel
-              name="password" required minlength="6"
-              (input)="clearMessages()" />
-      </div>
+
+      @if(isLoginMode) {
+        <div class="form-group">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" class="form-control"
+                placeholder="Enter your email" ngModel
+                name="email" #emailInput
+                (input)="clearMessages()" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password"
+                class="form-control"
+                placeholder="Enter your password" ngModel
+                name="password" #password
+                (input)="clearMessages()" />
+        </div>
+        <div>
+          <button type="button" class="btn-secondary"
+                  (click)="onForgotPassword(emailInput)"
+                  (input)="clearMessages()">Reset
+            Password</button>
+        </div>
+      } @else {
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control"
+                placeholder="Enter your email" ngModel
+                name="email" (input)="clearMessages()" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password"
+                class="form-control"
+                placeholder="Enter your password" ngModel
+                name="password" required minlength="6"
+                (input)="clearMessages()" />
+        </div>
       }
       <div>
         <button class="btn btn-primary" type="submit"
                 [disabled]="!authForm.valid">
-                {{ isLoginMode ? 'Log In' : 'Sign Up' }}
+          {{ isLoginMode ? 'Log In' : 'Sign Up' }}
         </button>
         <button class="btn btn-primary"
                 (click)="onSwitchMode()" type="button">
-                {{isLoginMode ? 'Register' : 'Log In'}}
+          {{isLoginMode ? 'Register' : 'Log In'}}
         </button>
       </div>
     </form>
-    @if(isLoading){
+    @if(isLoading) {
       <div class="spinner"></div>
     }
   </div>

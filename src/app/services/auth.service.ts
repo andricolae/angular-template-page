@@ -43,7 +43,6 @@ export class AuthService {
               return this.databaseService.saveUserProfile(resData.localId, email, hashedPassword, detectedLanguage, theme);
             }),
             tap(() => {
-              // this.translationService.setLanguage(detectedLanguage);
             }),
             map(() => resData)
           );
@@ -103,7 +102,6 @@ export class AuthService {
               return from(this.databaseService.getUserProfile(resData.localId)).pipe(
                 tap(userProfile => {
                   if (userProfile && userProfile.language) {
-                    // this.translationService.setLanguage(userProfile.language);
                   }
                 }),
                 map(() => resData)
