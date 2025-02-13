@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { ErrorComponent } from '../error/error.component';
+import config from '../../config/language-switcher-config.json';
 
 @Component({
   selector: 'app-preferences',
@@ -16,12 +17,13 @@ import { ErrorComponent } from '../error/error.component';
 export class PreferencesComponent implements OnInit {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;
 
-  availableLanguages: { label: string; code: string }[] = [];
   selectedLanguage: string = 'en';
   selectedTheme: string = 'light';
   userId: string | null = null;
   errorMessage: string = '';
   showErrorNotification: boolean = false;
+  languages: { key: string; value: string; enabled: boolean }[] = [];
+  config = config;
 
   constructor(
     private authService: AuthService,
@@ -39,6 +41,8 @@ export class PreferencesComponent implements OnInit {
     this.themeService.theme$.subscribe(theme => {
       this.selectedTheme = theme;
     });
+    this.languages = this.config.languages.filter((lang) => lang.enabled);
+    console.log(this.languages);
   }
   async loadUserPreferences(userId: string) {
     try {
@@ -62,6 +66,7 @@ export class PreferencesComponent implements OnInit {
     this.errorMessage = '';
     try {
       await this.databaseService.updateUserTheme(this.userId, this.selectedTheme).toPromise();
+      await this.databaseService.updateUserLanguage(this.userId, this.selectedLanguage).toPromise();
       localStorage.setItem('theme', this.selectedTheme);
       document.documentElement.setAttribute('data-theme', this.selectedTheme);
       this.showError('Succes');
