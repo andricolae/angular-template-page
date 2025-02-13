@@ -19,14 +19,14 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAubzKJeHlwP8OHFZvx9NbcAwbfbtsGjdQ",
-  authDomain: "templatewebsite-3e4ee.firebaseapp.com",
-  databaseURL: "https://templatewebsite-3e4ee-default-rtdb.firebaseio.com",
-  projectId: "templatewebsite-3e4ee",
-  storageBucket: "templatewebsite-3e4ee.appspot.com",
-  messagingSenderId: "722715285210",
-  appId: "1:722715285210:web:5fed25b07716267df5f7e3",
-  measurementId: "G-RMHMD8KE9V"
+  apiKey: "AIzaSyBqsg5CZVBbhGSl0p9KrQ_Z5xZGyAFQ44A",
+  authDomain: "angular-template-page.firebaseapp.com",
+  databaseURL: "https://angular-template-page-default-rtdb.firebaseio.com",
+  projectId: "angular-template-page",
+  storageBucket: "angular-template-page.firebasestorage.app",
+  messagingSenderId: "627149628663",
+  appId: "1:627149628663:web:c851cbddfd87d255999ff2",
+  measurementId: "G-P9WTSN3HWH"
 };
 
 bootstrapApplication(AppComponent, {

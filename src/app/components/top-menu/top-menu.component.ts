@@ -11,6 +11,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
+import { ThemePalette } from '@angular/material/core';
+import { ThemeService } from '../../services/theme.service';
 interface MenuItem {
   label: string;
   link: string;
@@ -31,12 +33,13 @@ export class TopMenuComponent {
   transparent = false;
   enabled = false;
   isAuthenticated = false;
+  theme: string = 'light';
 
   private userSub: Subscription | null = null;
 
   constructor(private router: Router, private highlightService: HighlightService,
       private sidebarService: SidebarService, private cdr: ChangeDetectorRef,
-      private authService: AuthService) {
+      private authService: AuthService, private themeService: ThemeService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.highlightService.setHighlightedHeader(null);
@@ -48,6 +51,9 @@ export class TopMenuComponent {
     this.loadConfig();
     this.languageService.currentLanguage.subscribe((lang) => {
       this.translate.use(lang);
+    });
+    this.themeService.theme$.subscribe(theme => {
+      this.theme = theme;
     });
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;

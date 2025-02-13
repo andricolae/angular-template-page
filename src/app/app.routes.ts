@@ -7,6 +7,7 @@ import { ServicesComponent } from './pages/company_services/company_services.com
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PreferencesComponent } from './components/preferences/preferences.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'countries', component: CountriesComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent },
   { path: 'auth', component: AuthComponent },
+  { path: 'preferences', component: PreferencesComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];

@@ -12,6 +12,7 @@
         }
       }
       @if (isAuthenticated) {
+        <a mat-button [routerLink]="'/preferences'">Preferences</a>
         <button mat-button (click)="onLogout()">Logout</button>
       }
     </nav>
