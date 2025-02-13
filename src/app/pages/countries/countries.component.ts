@@ -19,8 +19,10 @@ import { CityResponse } from '../../models/city.model';
 })
 export class CountriesComponent {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;
+  continents: { name: string }[] = [];
   countries: Country[] = [];
   cities: string[] = [];
+  selectedContinent: string = '';
   selectedCountry: string = '';
   selectedCity: string = '';
   errorMessage: string = '';
@@ -43,17 +45,45 @@ export class CountriesComponent {
     this.languageService.currentLanguage.subscribe((lang) => {
       this.translate.use(lang);
     });
-    this.fetchCountries();
+    this.fetchContinents();
   }
 
-  fetchCountries() {
-    this.countryService.getCountries().subscribe({
+  fetchContinents() {
+    this.countryService.getContinents().subscribe({
+      next: (data) => {
+        this.continents = data;
+      },
+      error: () => {
+        this.showError("Failed to load continents.");
+      },
+    });
+  }
+
+  onContinentSelect(continentName: string) {
+    this.selectedContinent = continentName;
+    this.selectedCountry = '';
+    this.cities = [];
+    this.fetchCountries(continentName);
+  }
+
+  fetchCountries(continentName: string) {
+    if (!continentName) return;
+
+    this.spinner.show();
+
+    this.countryService.getCountries(continentName).subscribe({
       next: (data) => {
         this.countries = data;
         this.showErrorNotification = false;
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 1000);
       },
-      error: (err) => {
+      error: () => {
         this.showError("No countries found. A network error has occurred!");
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 1000);
       },
     });
   }
@@ -85,6 +115,8 @@ export class CountriesComponent {
   }
 
   resetSelections() {
+    this.selectedContinent = '';
+    this.countries = [];
     this.selectedCountry = '';
     this.cities = [];
     this.showErrorNotification = false;

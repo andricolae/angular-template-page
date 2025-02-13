@@ -7,18 +7,28 @@
     <app-error [showError]="showErrorNotification" [errorMessage]="errorMessage"></app-error>
 
 
-    <h2>Select a Country</h2>
+    <h2>Select a Continent</h2>
     <select class="custom-select"
-            [(ngModel)]="selectedCountry"
-            (change)="fetchCities()">
-      <option value="" disabled selected>-- Select a country
-        --</option>
+            [(ngModel)]="selectedContinent"
+            (change)="onContinentSelect(selectedContinent)">
+      <option value="" disabled selected>-- Select a continent --</option>
 
-      @for (country of countries; track country.code) {
-      <option [value]="country.code">{{ country.name }}
+      @for (continent of continents; track continent) {
+      <option [value]="continent.name">{{ continent.name }}
       </option>
       }
     </select>
+
+    @if (countries.length > 0) {
+      <h2>Select a Country</h2>
+      <select class="custom-select" [(ngModel)]="selectedCountry" (change)="fetchCities()">
+        <option value="" disabled selected>-- Select a country --
+        </option>
+        @for (country of countries; track country) {
+        <option [value]="country.name">{{ country.name }}</option>
+        }
+      </select>
+    }
 
     @if (cities.length > 0) {
     <h2>Select a City</h2>
@@ -30,6 +40,7 @@
       }
     </select>
     }
+
   </div>
   <button class="custom-button" type="button"
           (click)="resetSelections()">Reset Form</button>
