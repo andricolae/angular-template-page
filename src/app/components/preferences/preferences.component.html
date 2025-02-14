@@ -1,6 +1,6 @@
 <div class="preferences-container">
   <div class="preferences-header">
-      <h2>Preferences</h2>
+      <h2>{{'prefH' | translate}}</h2>
   </div>
 
   <app-spinner></app-spinner>
@@ -11,7 +11,7 @@
       <select id="language" [(ngModel)]="selectedLanguage">
           @for(language of languages; track language) {
             <option [value]="language.key">
-              {{ language.value }}
+              {{ language.value | translate }}
             </option>
           }
       </select>
@@ -19,13 +19,13 @@
   <div class="form-group">
       <label for="theme">Theme</label>
       <select id="theme" [(ngModel)]="selectedTheme">
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
+          <option value="light">{{'Light' | translate}}</option>
+          <option value="dark">{{'Dark' | translate}}</option>
       </select>
   </div>
   <div>
       <button (click)="savePreferences()" class="btn-save">
-          Save
+          {{'Save' | translate}}
       </button>
   </div>
 </div>

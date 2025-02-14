@@ -12,8 +12,8 @@
         }
       }
       @if (isAuthenticated) {
-        <a mat-button [routerLink]="'/preferences'">Preferences</a>
-        <button mat-button (click)="onLogout()">Logout</button>
+        <a mat-button [routerLink]="'/preferences'">{{ 'Preferences' | translate }}</a>
+        <button mat-button (click)="onLogout()">{{ 'Logout' | translate}}</button>
       }
     </nav>
   </mat-toolbar-row>

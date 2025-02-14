@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ErrorComponent } from '../components/error/error.component';
 import { ThemeService } from '../services/theme.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-auth',
-  imports: [FormsModule, CommonModule, ErrorComponent],
+  imports: [FormsModule, CommonModule, ErrorComponent, TranslateModule],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css'
 })
@@ -18,12 +20,17 @@ export class AuthComponent {
   errorMessage: string = '';
   showErrorNotification: boolean = false;
   theme: string = 'light';
+  translate: TranslateService = inject(TranslateService);
+  languageService: LanguageService = inject(LanguageService);
 
   constructor(private authService: AuthService, private router: Router, private themeService: ThemeService) { }
 
   ngOnInit() {
     this.themeService.theme$.subscribe(theme => {
       this.theme = theme;
+    });
+    this.languageService.currentLanguage.subscribe((lang) => {
+      this.translate.use(lang);
     });
   }
 

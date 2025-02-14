@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { DatabaseService } from '../../services/database.service';
 import { ThemeService } from '../../services/theme.service';
@@ -7,15 +7,20 @@ import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { ErrorComponent } from '../error/error.component';
 import config from '../../config/language-switcher-config.json';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-preferences',
-  imports: [FormsModule, CommonModule, SpinnerComponent, ErrorComponent],
+  imports: [FormsModule, CommonModule, SpinnerComponent, ErrorComponent, TranslateModule],
   templateUrl: './preferences.component.html',
   styleUrl: './preferences.component.css'
 })
 export class PreferencesComponent implements OnInit {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;
+
+  translate: TranslateService = inject(TranslateService);
+  languageService: LanguageService = inject(LanguageService);
 
   selectedLanguage: string = 'en';
   selectedTheme: string = 'light';
@@ -43,6 +48,9 @@ export class PreferencesComponent implements OnInit {
     });
     this.languages = this.config.languages.filter((lang) => lang.enabled);
     console.log(this.languages);
+    this.languageService.currentLanguage.subscribe((lang) => {
+      this.translate.use(lang);
+    });
   }
   async loadUserPreferences(userId: string) {
     try {
