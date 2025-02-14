@@ -1,14 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguageService } from '../../services/language.service';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-not-found',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './not-found.component.html',
   styleUrl: './not-found.component.css'
 })
 export class NotFoundComponent {
-  constructor(private router: Router) {}
+  languageService: LanguageService = inject(LanguageService);
+  translate: TranslateService = inject(TranslateService);
+
+  constructor(private router: Router, private http: HttpClient) {}
+
+  ngOnInit() {
+    this.languageService.currentLanguage.subscribe((lang) => {
+      this.translate.use(lang);
+    });
+  }
 
   goHome() {
     this.router.navigate(['/']);
