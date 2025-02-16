@@ -20,9 +20,14 @@ export class NotFoundComponent {
     this.languageService.currentLanguage.subscribe((lang) => {
       this.translate.use(lang);
     });
+    this.translate.use(this.getLanguage());
   }
 
   goHome() {
     this.router.navigate(['/']);
+  }
+
+  getLanguage(): string {
+    return localStorage.getItem('language') || 'en';
   }
 }

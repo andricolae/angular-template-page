@@ -60,11 +60,11 @@
   "servT1" : "Explorează o suită completă de servicii concepute pentru a răspunde fiecărei nevoi a ta. De la consultanță strategică la implementare practică, suntem soluția ta unică pentru succes.",
   "servH2" : "<h2 i18n>Consultanță profesională</h2><p i18n>Cu ani de experiență și o echipă de profesioniști cu experiență, oferim informații și strategii care generează rezultate. Indiferent dacă lansezi un produs nou sau optimizezi procesele existente, experții noștri sunt aici pentru a te ghida.</p><ul><li i18n>Strategie de afaceri și planificare</li><li i18n>Optimizarea proceselor</li><li i18n>Analiza pieței</li></ul>",
   "servH34" : "<h2 i18n>Dezvoltare software personalizată</h2><p i18n>De la concept la implementare, livrăm soluții software realizate pe măsură care abordează provocările tale unice. Serviciile noastre de dezvoltare includ:</p><ul><li i18n>Dezvoltare aplicații web</li><li i18n>Soluții aplicații mobile</li><li i18n>Sisteme software pentru întreprinderi</li></ul> <h2 i18n>Instruire și Suport</h2><p i18n>Împlică-ți echipa cu abilitățile și cunoștințele necesare pentru a avea succes. Programele noastre de instruire și suportul continuu asigură că obții maximum din soluțiile noastre.</p>",
-  "contact" : "<p i18n>Suntem aici pentru a te ajuta! Indiferent dacă ai o întrebare, ai nevoie de suport sau pur și simplu vrei să discutăm, suntem întotdeauna bucuroși să auzim de la tine.</p><section><h2 i18n>Contactează-ne</h2><p i18n>Ne poți contacta prin oricare dintre următoarele canale:</p><ul><li i18n><strong>Email:</strong> support&#64;example.com</li><li i18n><strong>Telefon:</strong> +1 234 567 890</li><li i18n><strong>Adresă:</strong> 1234 Innovation Boulevard, Tech City</li></ul></section><section><h2 i18n>Întrebări frecvente</h2><p i18n>Căutând răspunsuri rapide? Consultă secțiunea noastră de întrebări frecvente:</p><ul><li i18n><strong>Cum încep?</strong> Pur și simplu contactează-ne prin email sau telefon și te vom ghida prin proces.</li><li i18n><strong>Care sunt orele de lucru?</strong> Suntem disponibili de luni până vineri, între 9:00 AM - 6:00 PM.</li><li i18n><strong>Pot solicita o soluție personalizată?</strong> Absolut! Ne specializăm în soluții personalizate pentru toți clienții noștri.</li></ul></section><section><h2 i18n>Orele de lucru</h2><p i18n><strong>Luni - Vineri:</strong> 9:00 AM - 6:00 PM<br><strong>Sâmbătă:</strong> 10:00 AM - 4:00 PM<br><strong>Duminică:</strong> Închis</p></section>",
+  "contact" : "<p i18n>Suntem aici pentru a te ajuta! Indiferent dacă ai o întrebare, ai nevoie de suport sau pur și simplu vrei să discutăm, suntem întotdeauna bucuroși să auzim de la tine.</p><section><h2 i18n>Contactează-ne</h2><p i18n>Ne poți contacta prin oricare dintre următoarele canale:</p><ul><li i18n><strong>email:</strong> support&#64;example.com</li><li i18n><strong>Telefon:</strong> +1 234 567 890</li><li i18n><strong>Adresă:</strong> 1234 Innovation Boulevard, Tech City</li></ul></section><section><h2 i18n>Întrebări frecvente</h2><p i18n>Căutând răspunsuri rapide? Consultă secțiunea noastră de întrebări frecvente:</p><ul><li i18n><strong>Cum încep?</strong> Pur și simplu contactează-ne prin email sau telefon și te vom ghida prin proces.</li><li i18n><strong>Care sunt orele de lucru?</strong> Suntem disponibili de luni până vineri, între 9:00 AM - 6:00 PM.</li><li i18n><strong>Pot solicita o soluție personalizată?</strong> Absolut! Ne specializăm în soluții personalizate pentru toți clienții noștri.</li></ul></section><section><h2 i18n>Orele de lucru</h2><p i18n><strong>Luni - Vineri:</strong> 9:00 AM - 6:00 PM<br><strong>Sâmbătă:</strong> 10:00 AM - 4:00 PM<br><strong>Duminică:</strong> Închis</p></section>",
   "login": "Autentificare",
   "signup": "Inregistrare",
   "reset" : "Reseteaza parola",
-  "enterEmail" : "Introduceti email-ul dumneavoastra",
+  "enteremail" : "Introduceti email-ul dumneavoastra",
   "enterPass" : "Introduceti parola-ul dumneavoastra",
   "prefH" : "Preferinte",
   "Save" : "Salveaza",
@@ -79,5 +79,6 @@
   "resF" : "Reseteaza cimpurile",
   "dummyS1" : "-- Selecteaza un continent --",
   "dummyS2" : "-- Selecteaza o tara --",
-  "dummyS3" : "-- Selecteaza un oras --"
+  "dummyS3" : "-- Selecteaza un oras --",
+  "hi" : "Salut, "
 }

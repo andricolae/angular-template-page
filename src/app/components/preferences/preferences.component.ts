@@ -92,4 +92,8 @@ export class PreferencesComponent implements OnInit {
       this.showErrorNotification = false;
     }, 2000);
   }
+
+  onLogout() {
+    this.authService.logout();
+  }
 }

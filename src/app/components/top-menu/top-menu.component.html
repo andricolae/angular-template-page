@@ -11,9 +11,11 @@
           <a mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label | translate }}</a>
         }
       }
+      @if (!isAuthenticated) {
+        <a mat-button [routerLink]="'/auth'">{{ 'My Account' | translate }}</a>
+      }
       @if (isAuthenticated) {
-        <a mat-button [routerLink]="'/preferences'">{{ 'Preferences' | translate }}</a>
-        <button mat-button (click)="onLogout()">{{ 'Logout' | translate}}</button>
+        <a mat-button [routerLink]="'/preferences'">{{ 'hi' | translate }} {{userName}}</a>
       }
     </nav>
   </mat-toolbar-row>

@@ -17,7 +17,7 @@ export class AuthService {
   private signUpUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.apiKey}`;
   private loginUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.apiKey}`;
   private resetPasswordUrl = `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${this.apiKey}`;
-  private verifyEmailUrl = `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${this.apiKey}`;
+  private verifyemailUrl = `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${this.apiKey}`;
   private getUserDataUrl = `https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${this.apiKey}`;
 
   user = new BehaviorSubject<User | null>(null);
@@ -38,7 +38,7 @@ export class AuthService {
     })
       .pipe(
         switchMap((resData) => {
-          return this.sendVerificationEmail(resData.idToken).pipe(
+          return this.sendVerificationemail(resData.idToken).pipe(
             switchMap(() => {
               return this.databaseService.saveUserProfile(resData.localId, email, hashedPassword, detectedLanguage, theme);
             }),
@@ -57,9 +57,9 @@ export class AuthService {
       );
   }
 
-  sendVerificationEmail(idToken: string): Observable<any> {
-    return this.http.post<any>(this.verifyEmailUrl, {
-      requestType: "VERIFY_EMAIL",
+  sendVerificationemail(idToken: string): Observable<any> {
+    return this.http.post<any>(this.verifyemailUrl, {
+      requestType: "VERIFY_email",
       idToken
     }).pipe(
       catchError(this.handleError)
@@ -94,7 +94,7 @@ export class AuthService {
               if (!isVerified) {
                 return throwError(() => ({
                   error: {
-                    error: { message: 'EMAIL_NOT_VERIFIED' }
+                    error: { message: 'email_NOT_VERIFIED' }
                   }
                 }));
               }
@@ -172,7 +172,7 @@ export class AuthService {
       map((res) => {
         const user = res.users ? res.users[0] : null;
         console.log('User:', user);
-        console.log('Email verified:', user?.emailVerified);
+        console.log('email verified:', user?.emailVerified);
         return user?.emailVerified || false;
       }),
       catchError(this.handleError)
@@ -193,10 +193,10 @@ export class AuthService {
       return throwError(() => new Error(errorMessage));
     }
     switch (errorRes.error.error.message) {
-      case 'EMAIL_EXISTS':
+      case 'email_EXISTS':
         errorMessage = 'This email exists already.';
         break;
-      case 'EMAIL_NOT_FOUND':
+      case 'email_NOT_FOUND':
         errorMessage = 'Credentials were not found.';
         break;
       case 'INVALID_PASSWORD':
@@ -211,7 +211,7 @@ export class AuthService {
       case 'INVALID_ID_TOKEN':
         errorMessage = 'Invalid session token. Please login again.';
         break;
-      case 'EMAIL_NOT_VERIFIED':
+      case 'email_NOT_VERIFIED':
         errorMessage = 'Please verify your email before logging in.';
         break;
     }
