@@ -77,6 +77,8 @@ export class PreferencesComponent implements OnInit {
       await this.databaseService.updateUserLanguage(this.userId, this.selectedLanguage).toPromise();
       localStorage.setItem('theme', this.selectedTheme);
       document.documentElement.setAttribute('data-theme', this.selectedTheme);
+      this.languageService.changeLanguage(this.selectedLanguage);
+      this.translate.use(this.selectedLanguage);
       this.showError('Succes');
     } catch (error) {
       this.showError('Eroare');

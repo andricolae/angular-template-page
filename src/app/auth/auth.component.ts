@@ -7,6 +7,8 @@ import { ErrorComponent } from '../components/error/error.component';
 import { ThemeService } from '../services/theme.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
+import { DatabaseService } from '../services/database.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -22,8 +24,10 @@ export class AuthComponent {
   theme: string = 'light';
   translate: TranslateService = inject(TranslateService);
   languageService: LanguageService = inject(LanguageService);
+  private languageSub!: Subscription;
+  userLanguage: string | undefined;
 
-  constructor(private authService: AuthService, private router: Router, private themeService: ThemeService) { }
+  constructor(private authService: AuthService, private router: Router, private themeService: ThemeService, private databaseService: DatabaseService) { }
 
   ngOnInit() {
     this.themeService.theme$.subscribe(theme => {
@@ -31,6 +35,12 @@ export class AuthComponent {
     });
     this.languageService.currentLanguage.subscribe((lang) => {
       this.translate.use(lang);
+    });
+    this.languageSub = this.authService.languageSubject.subscribe((language) => {
+      this.userLanguage = language;
+      console.log("User's language in AuthComponent:", this.userLanguage);
+      this.languageService.changeLanguage(language);
+      this.translate.use(language);
     });
   }
 
@@ -57,6 +67,12 @@ export class AuthComponent {
           console.log('Logged in:', resData);
           // console.log(resData.email);
           this.isLoading = false;
+          // this.databaseService.getUserLanguage(resData.idToken).subscribe((language) => {
+          //   console.log("User language:", language);
+          // language = "ro";
+          //   this.languageService.changeLanguage(language);
+          //   this.translate.use(language);
+          // });
           this.router.navigate(['/countries']);
         },
         error: (errorMessage) => {

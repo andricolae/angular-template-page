@@ -21,6 +21,7 @@ export class AuthService {
   private getUserDataUrl = `https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${this.apiKey}`;
 
   user = new BehaviorSubject<User | null>(null);
+  languageSubject = new BehaviorSubject<string>('en');
 
   constructor(private http: HttpClient, private router: Router, private databaseService: DatabaseService) {
     this.autoLogin();
@@ -102,6 +103,8 @@ export class AuthService {
               return from(this.databaseService.getUserProfile(resData.localId)).pipe(
                 tap(userProfile => {
                   if (userProfile && userProfile.language) {
+                    console.log('User language from database:', userProfile.language);
+                    this.languageSubject.next(userProfile.language);
                   }
                 }),
                 map(() => resData)

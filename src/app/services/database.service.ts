@@ -21,6 +21,21 @@ export class DatabaseService {
     );
   }
 
+  getUserLanguage(localId: string): Observable<string> {
+    const userRef = doc(this.firestore, `users/${localId}`);
+    return from(getDoc(userRef)).pipe(
+      map((docSnap) => {
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          return userData?.["language"] || 'en';
+        } else {
+          return 'en';
+        }
+      })
+    );
+  }
+
+
   updateUserLanguage(userId: string,
                     language: string): Observable<void> {
     const userRef = doc(this.firestore, `users/${userId}`);
