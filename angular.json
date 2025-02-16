@@ -9,18 +9,16 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": true,
+            "baseHref": "/",
             "outputPath": "dist/angular-template-page",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js",
-              "@angular/localize/init"
+              "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -57,18 +55,7 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            },
-            "ro": {
-              "localize": [
-                "ro"
-              ]
-            },
-            "fr": {
-              "localize": [
-                "fr"
-              ]
             }
-
           },
           "defaultConfiguration": "production"
         },
@@ -80,9 +67,6 @@
             },
             "development": {
               "buildTarget": "angular-template-page:build:development"
-            },
-            "ro": {
-              "buildTarget": "angular-template-page:build:development,ro"
             }
           },
           "defaultConfiguration": "development"
@@ -93,8 +77,7 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing",
-              "@angular/localize/init"
+              "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
