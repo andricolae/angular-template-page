@@ -13,21 +13,11 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { AuthInterceptorService } from './app/services/auth-intercept.service';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from './environments/environment';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBqsg5CZVBbhGSl0p9KrQ_Z5xZGyAFQ44A",
-  authDomain: "angular-template-page.firebaseapp.com",
-  databaseURL: "https://angular-template-page-default-rtdb.firebaseio.com",
-  projectId: "angular-template-page",
-  storageBucket: "angular-template-page.firebasestorage.app",
-  messagingSenderId: "627149628663",
-  appId: "1:627149628663:web:c851cbddfd87d255999ff2",
-  measurementId: "G-P9WTSN3HWH"
-};
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -47,6 +37,6 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(withInterceptorsFromDi()),
     provideHttpClient(),
     { provide: AuthInterceptorService, useClass: AuthInterceptorService },
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
 ]});
