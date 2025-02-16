@@ -10,13 +10,13 @@ export class AuthInterceptorService implements HttpInterceptor {
             take(1),
             exhaustMap(user => {
                 if (!user || !user.token) {
-                    console.log("[AuthInterceptor] No user or token found. Proceeding without auth.");
+                    // console.log("[AuthInterceptor] No user or token found. Proceeding without auth.");
                     return next.handle(req);
                 }
                 const modifiedReq = req.clone({
                     setParams: { auth: user.token }
                 });
-                console.log("[AuthInterceptor] Modified Request:", modifiedReq); // ✅ Debugging Log
+                // console.log("[AuthInterceptor] Modified Request:", modifiedReq); // ✅ Debugging Log
                 return next.handle(modifiedReq);
             })
         );
