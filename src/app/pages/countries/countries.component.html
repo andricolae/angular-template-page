@@ -7,11 +7,11 @@
     <app-error [showError]="showErrorNotification" [errorMessage]="errorMessage"></app-error>
 
 
-    <h2>Select a Continent</h2>
+    <h2>{{ 'select1' | translate }}</h2>
     <select class="custom-select"
             [(ngModel)]="selectedContinent"
             (change)="onContinentSelect(selectedContinent)">
-      <option value="" disabled selected>-- Select a continent --</option>
+      <option value="" disabled selected>{{'dummyS1' | translate}}</option>
 
       @for (continent of continents; track continent) {
       <option [value]="continent.name">{{ continent.name }}
@@ -20,9 +20,9 @@
     </select>
 
     @if (countries.length > 0) {
-      <h2>Select a Country</h2>
+      <h2>{{ 'select2' | translate }}</h2>
       <select class="custom-select" [(ngModel)]="selectedCountry" (change)="fetchCities()">
-        <option value="" disabled selected>-- Select a country --
+        <option value="" disabled selected>{{'dummyS2' | translate}}
         </option>
         @for (country of countries; track country) {
         <option [value]="country.name">{{ country.name }}</option>
@@ -31,9 +31,9 @@
     }
 
     @if (cities.length > 0) {
-    <h2>Select a City</h2>
+    <h2>{{ 'select3' | translate }}</h2>
     <select class="custom-select">
-      <option value="" disabled selected>-- Select a city --
+      <option value="" disabled selected>{{'dummyS3' | translate}}
       </option>
       @for (city of cities; track city) {
       <option [value]="city">{{ city }}</option>
@@ -43,6 +43,6 @@
 
   </div>
   <button class="custom-button" type="button"
-          (click)="resetSelections()">Reset Form</button>
+          (click)="resetSelections()">{{ 'resF' | translate }}</button>
 
 </div>

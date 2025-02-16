@@ -28,6 +28,8 @@ export class TopMenuComponent {
   translate: TranslateService = inject(TranslateService);
   languageService: LanguageService = inject(LanguageService);
 
+  userName: string | null = null;
+
   menuItems: MenuItem[] = [];
   sticky = false;
   transparent = false;
@@ -59,6 +61,25 @@ export class TopMenuComponent {
       this.isAuthenticated = !!user;
       console.log('User:', user);
     });
+    this.retrieveEmail();
+    console.log(this.userName);
+  }
+
+  retrieveEmail() {
+    const userData = localStorage.getItem('userData');
+    let  email = '';
+    if (userData) {
+      try {
+        const userD = JSON.parse(userData);
+        email = userD.emaiL
+        console.log(email);
+      } catch (error) {
+        console.error('Error parsing userData:', error);
+      }
+    } else {
+      console.warn('No userData found in localStorage');
+    }
+    this.userName = email.split('@')[0];
   }
 
   loadConfig(): void {
@@ -76,10 +97,6 @@ export class TopMenuComponent {
 
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
-  }
-
-  onLogout() {
-    this.authService.logout();
   }
 
   ngOnDestroy() {

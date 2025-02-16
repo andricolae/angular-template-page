@@ -1,4 +1,9 @@
-<h3>{{ isLoginMode ? 'Login' : 'SignUp' }}</h3>
+@if (isLoginMode) {
+  <h3>{{ 'login' | translate }}</h3>
+} @else {
+  <h3>{{ 'signup' | translate }}</h3>
+}
+
 <div class="row">
 
   <app-error [showError]="showErrorNotification"
@@ -12,7 +17,7 @@
         <div class="form-group">
           <label for="email">E-Mail</label>
           <input type="email" id="email" class="form-control"
-                placeholder="Enter your email" ngModel
+                [placeholder]=" 'enteremail' | translate" ngModel
                 name="email" #emailInput
                 (input)="clearMessages()" />
         </div>
@@ -20,28 +25,27 @@
           <label for="password">Password</label>
           <input type="password" id="password"
                 class="form-control"
-                placeholder="Enter your password" ngModel
+                [placeholder]=" 'enterPass' | translate" ngModel
                 name="password" #password
                 (input)="clearMessages()" />
         </div>
         <div>
           <button type="button" class="btn-secondary"
                   (click)="onForgotPassword(emailInput)"
-                  (input)="clearMessages()">Reset
-            Password</button>
+                  (input)="clearMessages()">{{ 'reset' | translate }}</button>
         </div>
       } @else {
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email">email</label>
           <input type="email" id="email" class="form-control"
-                placeholder="Enter your email" ngModel
+                [placeholder]=" 'enteremail' | translate" ngModel
                 name="email" (input)="clearMessages()" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" id="password"
                 class="form-control"
-                placeholder="Enter your password" ngModel
+                [placeholder]=" 'enterPass' | translate" ngModel
                 name="password" required minlength="6"
                 (input)="clearMessages()" />
         </div>
@@ -49,11 +53,19 @@
       <div>
         <button class="btn btn-primary" type="submit"
                 [disabled]="!authForm.valid">
-          {{ isLoginMode ? 'Log In' : 'Sign Up' }}
+          @if (isLoginMode) {
+            {{ 'login' | translate }}
+          } @else {
+            {{ 'signup' | translate }}
+          }
         </button>
         <button class="btn btn-primary"
                 (click)="onSwitchMode()" type="button">
-          {{isLoginMode ? 'Register' : 'Log In'}}
+          @if (isLoginMode) {
+            {{ 'signup' | translate }}
+          } @else {
+            {{ 'login' | translate }}
+          }
         </button>
       </div>
     </form>

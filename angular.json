@@ -69,7 +69,13 @@
               "localize": [
                 "ro"
               ]
+            },
+            "fr": {
+              "localize": [
+                "fr"
+              ]
             }
+
           },
           "defaultConfiguration": "production"
         },

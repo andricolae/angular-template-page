@@ -115,7 +115,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8684068455293269251" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Email:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> support@example.com</source>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>email:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> support@example.com</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
           <context context-type="linenumber">13,14</context>
@@ -199,7 +199,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5907235624771846199" datatype="html">
-        <source>Your Email:</source>
+        <source>Your email:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
           <context context-type="linenumber">46,47</context>

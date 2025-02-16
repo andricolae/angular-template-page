@@ -1,49 +1,12 @@
 <div class="page-content">
   <h1 i18n>{{ 'contactHeader' | translate}}</h1>
-  <p i18n>
-    We’re here to help! Whether you have a question, need support, or just want to chat, we’re always happy to hear from you.
-  </p>
-
-  <section>
-    <h2 i18n>Reach Out to Us</h2>
-    <p i18n>
-      You can contact us through any of the following channels:
-    </p>
-    <ul>
-      <li i18n><strong>Email:</strong> support&#64;example.com</li>
-      <li i18n><strong>Phone:</strong> +1 234 567 890</li>
-      <li i18n><strong>Address:</strong> 1234 Innovation Boulevard, Tech City</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2 i18n>Frequently Asked Questions</h2>
-    <p i18n>
-      Looking for quick answers? Check out our FAQ section:
-    </p>
-    <ul>
-      <li i18n><strong>How do I get started?</strong> Simply reach out to us via email or phone, and we’ll guide you through the process.</li>
-      <li i18n><strong>What are your working hours?</strong> We’re available Monday to Friday, 9:00 AM - 6:00 PM.</li>
-      <li i18n><strong>Can I request a custom solution?</strong> Absolutely! We specialize in tailor-made solutions for all our clients.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2 i18n>Office Hours</h2>
-    <p i18n>
-      <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM<br>
-      <strong>Saturday:</strong> 10:00 AM - 4:00 PM<br>
-      <strong>Sunday:</strong> Closed
-    </p>
-  </section>
-
-  <section>
-    <h2 i18n>Leave Us a Message</h2>
+  <section [innerHTML]=" 'contact' | translate"></section>
+    <!-- <section>
     <form>
       <label i18n for="name">Your Name:</label>
       <input type="text" id="name" />
 
-      <label i18n for="email">Your Email:</label>
+      <label i18n for="email">Your email:</label>
       <input i18n type="email" id="email" />
 
       <label i18n for="message">Your Message:</label>
@@ -51,5 +14,5 @@
 
       <button i18n type="submit">Send</button>
     </form>
-  </section>
+  </section> -->
 </div>
