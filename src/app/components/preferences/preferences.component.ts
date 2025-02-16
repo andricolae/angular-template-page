@@ -47,7 +47,7 @@ export class PreferencesComponent implements OnInit {
       this.selectedTheme = theme;
     });
     this.languages = this.config.languages.filter((lang) => lang.enabled);
-    console.log(this.languages);
+    // console.log(this.languages);
     this.languageService.currentLanguage.subscribe((lang) => {
       this.translate.use(lang);
     });

@@ -55,6 +55,7 @@ export class AuthComponent {
       this.authService.login(email, password).subscribe({
         next: (resData) => {
           console.log('Logged in:', resData);
+          // console.log(resData.email);
           this.isLoading = false;
           this.router.navigate(['/countries']);
         },
