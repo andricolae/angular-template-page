@@ -38,7 +38,7 @@ export class AuthComponent {
     });
     this.languageSub = this.authService.languageSubject.subscribe((language) => {
       this.userLanguage = language;
-      console.log("User's language in AuthComponent:", this.userLanguage);
+      // console.log("User's language in AuthComponent:", this.userLanguage);
       this.languageService.changeLanguage(language);
       this.translate.use(language);
     });
@@ -49,7 +49,7 @@ export class AuthComponent {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    // console.log(form.value);
     if (!form.valid) {
       return;
     }
@@ -57,14 +57,14 @@ export class AuthComponent {
     const password = form.value.password;
     const language = navigator.language.slice(0, 2);
     const theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    console.log("Detected theme:", theme);
-    console.log("Detected language:", language);
+    // console.log("Detected theme:", theme);
+    // console.log("Detected language:", language);
 
     if (this.isLoginMode) {
       this.isLoading = true;
       this.authService.login(email, password).subscribe({
         next: (resData) => {
-          console.log('Logged in:', resData);
+          // console.log('Logged in:', resData);
           // console.log(resData.email);
           this.isLoading = false;
           // this.databaseService.getUserLanguage(resData.idToken).subscribe((language) => {
@@ -76,7 +76,7 @@ export class AuthComponent {
           this.router.navigate(['/countries']);
         },
         error: (errorMessage) => {
-          console.log(errorMessage);
+          // console.log(errorMessage);
           this.errorMessage = errorMessage;
           this.showError(this.errorMessage);
           this.isLoading = false;
@@ -87,14 +87,14 @@ export class AuthComponent {
       this.isLoading = true;
       this.authService.signup(email, password, language).subscribe({
         next: (resData) => {
-          console.log(resData);
+          // console.log(resData);
           this.isLoading = false;
           this.isLoginMode = !this.isLoginMode;
           this.errorMessage = "Verification email sent! Please check your inbox.";
           this.showError(this.errorMessage);
         },
         error: (errorMessage) => {
-          console.log(errorMessage);
+          // console.log(errorMessage);
           this.errorMessage = errorMessage;
           this.showError(this.errorMessage);
           this.isLoading = false;
@@ -122,7 +122,7 @@ export class AuthComponent {
         this.showError(this.errorMessage);
       },
       error: (errorMessage) => {
-        console.log(errorMessage);
+        // console.log(errorMessage);
         this.showError(errorMessage);
       }
     });

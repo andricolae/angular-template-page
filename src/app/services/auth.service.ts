@@ -69,7 +69,7 @@ export class AuthService {
 
   logout() {
     this.user.next(null);
-    console.log('Logging out...');
+    // console.log('Logging out...');
     localStorage.removeItem('userData');
     this.router.navigate(['/auth']);
   }
@@ -103,7 +103,7 @@ export class AuthService {
               return from(this.databaseService.getUserProfile(resData.localId)).pipe(
                 tap(userProfile => {
                   if (userProfile && userProfile.language) {
-                    console.log('User language from database:', userProfile.language);
+                    // console.log('User language from database:', userProfile.language);
                     this.languageSubject.next(userProfile.language);
                   }
                 }),
@@ -174,8 +174,8 @@ export class AuthService {
     return this.http.post<any>(this.getUserDataUrl, { idToken }).pipe(
       map((res) => {
         const user = res.users ? res.users[0] : null;
-        console.log('User:', user);
-        console.log('email verified:', user?.emailVerified);
+        // console.log('User:', user);
+        // console.log('email verified:', user?.emailVerified);
         return user?.emailVerified || false;
       }),
       catchError(this.handleError)
