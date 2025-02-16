@@ -28,7 +28,7 @@ export class TopMenuComponent {
   translate: TranslateService = inject(TranslateService);
   languageService: LanguageService = inject(LanguageService);
 
-  userName: string | null = null;
+  userName: string | undefined = '';
 
   menuItems: MenuItem[] = [];
   sticky = false;
@@ -59,28 +59,29 @@ export class TopMenuComponent {
     });
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;
-      console.log('User:', user);
+      // console.log('User:', user);
+      // console.log(user?.email);
+      this.userName = user?.email;
     });
-    this.retrieveEmail();
-    console.log(this.userName);
+    // console.log(this.userName);
   }
 
-  retrieveEmail() {
-    const userData = localStorage.getItem('userData');
-    let  email = '';
-    if (userData) {
-      try {
-        const userD = JSON.parse(userData);
-        email = userD.emaiL
-        console.log(email);
-      } catch (error) {
-        console.error('Error parsing userData:', error);
-      }
-    } else {
-      console.warn('No userData found in localStorage');
-    }
-    this.userName = email.split('@')[0];
-  }
+  // retrieveEmail() {
+  //   const userData = localStorage.getItem('userData');
+  //   let  email = '';
+  //   if (userData) {
+  //     try {
+  //       const userD = JSON.parse(userData);
+  //       email = userD.emaiL
+  //       console.log(email);
+  //     } catch (error) {
+  //       console.error('Error parsing userData:', error);
+  //     }
+  //   } else {
+  //     console.warn('No userData found in localStorage');
+  //   }
+  //   this.userName = email.split('@')[0];
+  // }
 
   loadConfig(): void {
     this.menuItems = topMenuConfig.menuItems.filter((item) => item.enabled);

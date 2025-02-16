@@ -29,7 +29,7 @@ export class LanguageSwitcherComponent {
       });
       this.cdr.detectChanges();
     }
-    console.log(this.currentLanguage);
+    // console.log(this.currentLanguage);
   }
 
   loadLanguages(): void {
